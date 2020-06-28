@@ -134,7 +134,7 @@ void ParseConfigs()
 	{
 		LogError("Unable to locate exec config file, no maps loaded.");
 			
-		return;		
+		return;
 	}
 	
 	int line;

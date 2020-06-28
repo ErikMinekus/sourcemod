@@ -561,10 +561,10 @@ public void OnReceiveGroupImmunity(Database db, DBResultSet rs, const char[] err
 	if (rs == null)
 	{
 		char query[255];
-		pk.ReadString(query, sizeof(query));		
+		pk.ReadString(query, sizeof(query));
 		LogError("SQL error receiving group immunity: %s", error);
 		LogError("Query dump: %s", query);
-		delete pk;	
+		delete pk;
 		return;
 	}
 	
@@ -618,10 +618,10 @@ public void OnReceiveGroupOverrides(Database db, DBResultSet rs, const char[] er
 	if (rs == null)
 	{
 		char query[255];
-		pk.ReadString(query, sizeof(query));		
+		pk.ReadString(query, sizeof(query));
 		LogError("SQL error receiving group overrides: %s", error);
 		LogError("Query dump: %s", query);
-		delete pk;	
+		delete pk;
 		return;
 	}
 	

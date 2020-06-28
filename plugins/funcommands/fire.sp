@@ -111,7 +111,7 @@ public Action Timer_FireBomb(Handle timer, any value)
 			color = RoundToFloor(g_FireBombTime[client] * (255.0 / g_Cvar_FireBombTicks.FloatValue));
 			if (g_BeepSound[0])
 			{
-				EmitAmbientSound(g_BeepSound, vec, client, SNDLEVEL_RAIDSIREN);	
+				EmitAmbientSound(g_BeepSound, vec, client, SNDLEVEL_RAIDSIREN);
 			}
 		}
 		else
@@ -127,7 +127,7 @@ public Action Timer_FireBomb(Handle timer, any value)
 
 		char name[MAX_NAME_LENGTH];
 		GetClientName(client, name, sizeof(name));
-		PrintCenterTextAll("%t", "Till Explodes", name, g_FireBombTime[client]);		
+		PrintCenterTextAll("%t", "Till Explodes", name, g_FireBombTime[client]);
 		
 		if (g_BeamSprite > -1 && g_HaloSprite > -1)
 		{
@@ -157,13 +157,13 @@ public Action Timer_FireBomb(Handle timer, any value)
 			TE_SendToAll();
 			vec[2] += 15;
 			TE_SetupBeamRingPoint(vec, 40.0, g_Cvar_FireBombRadius.FloatValue, g_BeamSprite, g_HaloSprite, 0, 10, 0.6, 30.0, 1.5, orangeColor, 5, 0);
-			TE_SendToAll();	
+			TE_SendToAll();
 			vec[2] += 15;
 			TE_SetupBeamRingPoint(vec, 30.0, g_Cvar_FireBombRadius.FloatValue, g_BeamSprite, g_HaloSprite, 0, 10, 0.7, 30.0, 1.5, orangeColor, 5, 0);
 			TE_SendToAll();
 			vec[2] += 15;
 			TE_SetupBeamRingPoint(vec, 20.0, g_Cvar_FireBombRadius.FloatValue, g_BeamSprite, g_HaloSprite, 0, 10, 0.8, 30.0, 1.5, orangeColor, 5, 0);
-			TE_SendToAll();		
+			TE_SendToAll();
 		}
 		
 		if (g_BoomSound[0])

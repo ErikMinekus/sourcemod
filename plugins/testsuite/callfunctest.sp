@@ -28,7 +28,7 @@ public OnCallFuncReceived(num, Float:fnum, String:str[], String:str2[], &val, &F
 	val = 15;
 	
 	PrintToServer("fval = %f (expected: %f, setting to %f)", fval, 6.25, 1.5);
-	fval = 1.5; 
+	fval = 1.5;
 	
 	PrintToServer("Printing %d elements of array[] (expected: %d)", size, 6);
 	for (new i = 0; i < size; i++)

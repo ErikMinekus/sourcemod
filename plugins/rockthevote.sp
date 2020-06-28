@@ -85,7 +85,7 @@ public void OnPluginStart()
 	{
 		if (IsClientConnected(i))
 		{
-			OnClientConnected(i);	
+			OnClientConnected(i);
 		}
 	}
 }
@@ -187,7 +187,7 @@ void AttemptRTV(int client)
 	if (GetClientCount(true) < g_Cvar_MinPlayers.IntValue)
 	{
 		ReplyToCommand(client, "[SM] %t", "Minimal Players Not Met");
-		return;			
+		return;
 	}
 	
 	if (g_Voted[client])
@@ -219,7 +219,7 @@ void StartRTV()
 {
 	if (g_InChange)
 	{
-		return;	
+		return;
 	}
 	
 	if (EndOfMapVoteEnabled() && HasEndOfMapVoteFinished())
@@ -238,7 +238,7 @@ void StartRTV()
 			
 			g_RTVAllowed = false;
 		}
-		return;	
+		return;
 	}
 	
 	if (CanMapChooserStartVote())

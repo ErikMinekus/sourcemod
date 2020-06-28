@@ -80,7 +80,7 @@ void BuildDynamicMenu()
 	char executeBuffer[32];
 	
 	KeyValues kvMenu = new KeyValues("Commands");
-	kvMenu.SetEscapeSequences(true); 
+	kvMenu.SetEscapeSequences(true);
 	
 	char file[256];
 	
@@ -150,7 +150,7 @@ void BuildDynamicMenu()
 			}
 			
 			
-			kvMenu.GetString("cmd", itemInput.cmd, sizeof(itemInput.cmd));	
+			kvMenu.GetString("cmd", itemInput.cmd, sizeof(itemInput.cmd));
 			kvMenu.GetString("execute", executeBuffer, sizeof(executeBuffer));
 			
 			if (StrEqual(executeBuffer, "server"))
@@ -175,7 +175,7 @@ void BuildDynamicMenu()
 					
 				if (count == 1)
 				{
-					itemInput.submenus = new ArrayList(sizeof(submenuInput));	
+					itemInput.submenus = new ArrayList(sizeof(submenuInput));
 				}
 					
 				kvMenu.GetString("type", inputBuffer, sizeof(inputBuffer));
@@ -233,7 +233,7 @@ void BuildDynamicMenu()
 						kvMenu.GetString(temp, text, sizeof(text), value);
 						
 						Format(temp,5,"%i*",i);
-						kvMenu.GetString(temp, subadm, sizeof(subadm),"");	
+						kvMenu.GetString(temp, subadm, sizeof(subadm),"");
 						
 						if (value[0]=='\0')
 						{
@@ -293,7 +293,7 @@ void BuildDynamicMenu()
 					
 				itemInput.submenus.PushArray(submenuInput);
 				
-				kvMenu.GoBack();	
+				kvMenu.GoBack();
 			}
 				
 			/* Save this entire item into the global items array and add it to the menu */
@@ -353,7 +353,7 @@ void ParseConfigs()
 	{
 		LogError("Unable to locate admin menu groups file: %s", configPath);
 			
-		return;		
+		return;
 	}
 	
 	int line;
@@ -509,13 +509,13 @@ public void ParamCheck(int client)
 						{
 							int userid = GetClientUserId(i);
 							Format(infoBuffer, sizeof(infoBuffer), "#%i", userid);
-							itemMenu.AddItem(infoBuffer, nameBuffer);	
+							itemMenu.AddItem(infoBuffer, nameBuffer);
 						}
 						case UserId2:
 						{
 							int userid = GetClientUserId(i);
 							Format(infoBuffer, sizeof(infoBuffer), "%i", userid);
-							itemMenu.AddItem(infoBuffer, nameBuffer);							
+							itemMenu.AddItem(infoBuffer, nameBuffer);
 						}
 						case SteamId:
 						{
@@ -525,7 +525,7 @@ public void ParamCheck(int client)
 						case IpAddress:
 						{
 							GetClientIP(i, infoBuffer, sizeof(infoBuffer));
-							itemMenu.AddItem(infoBuffer, nameBuffer);							
+							itemMenu.AddItem(infoBuffer, nameBuffer);
 						}
 						case Name:
 						{
@@ -534,7 +534,7 @@ public void ParamCheck(int client)
 						default: //assume client id
 						{
 							Format(temp,3,"%i",i);
-							itemMenu.AddItem(temp, nameBuffer);						
+							itemMenu.AddItem(temp, nameBuffer);
 						}
 					}
 				}
@@ -659,7 +659,7 @@ stock bool QuoteString(char[] input, char[] output, int maxlen, char[] quotechar
 		{
 			/* Null terminate for safety */
 			output[maxlen-1] = 0;
-			return false;	
+			return false;
 		}
 		
 		if (FindCharInString(quotechars, input[i]) != -1 || input[i] == '\\')
@@ -672,7 +672,7 @@ stock bool QuoteString(char[] input, char[] output, int maxlen, char[] quotechar
 			{
 				/* Null terminate for safety */
 				output[maxlen-1] = 0;
-				return false;	
+				return false;
 			}
 		}
 	}
@@ -697,14 +697,14 @@ stock bool UnQuoteString(char[] input, char[] output, int maxlen, char[] quotech
 		if (input[i+1] == '\\' && (input[i] == '\\' || FindCharInString(quotechars, input[i]) != -1))
 		{
 			/* valid quotechar followed by a backslash - Skip */
-			i++; 
+			i++;
 		}
 		
 		if (count >= maxlen)
 		{
 			/* Null terminate for safety */
 			output[maxlen-1] = 0;
-			return false;	
+			return false;
 		}
 	}
 	

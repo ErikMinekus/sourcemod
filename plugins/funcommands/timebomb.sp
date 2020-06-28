@@ -104,7 +104,7 @@ public Action Timer_TimeBomb(Handle timer, any value)
 			color = RoundToFloor(g_TimeBombTime[client] * (128.0 / g_Cvar_TimeBombTicks.FloatValue));
 			if (g_BeepSound[0])
 			{
-				EmitAmbientSound(g_BeepSound, vec, client, SNDLEVEL_RAIDSIREN);	
+				EmitAmbientSound(g_BeepSound, vec, client, SNDLEVEL_RAIDSIREN);
 			}
 		}
 		else
@@ -185,7 +185,7 @@ public Action Timer_TimeBomb(Handle timer, any value)
 				if (g_ExplosionSprite > -1)
 				{
 					TE_SetupExplosion(pos, g_ExplosionSprite, 0.05, 1, 0, 1, 1);
-					TE_SendToAll();	
+					TE_SendToAll();
 				}
 				
 				/* ToDo

@@ -53,7 +53,7 @@ int g_mapListSerial = -1;
 
 public void OnPluginStart()
 {
-	int arraySize = ByteCountToCells(PLATFORM_MAX_PATH);	
+	int arraySize = ByteCountToCells(PLATFORM_MAX_PATH);
 	g_MapList = new ArrayList(arraySize);
 	g_OldMapList = new ArrayList(arraySize);
 
@@ -105,7 +105,7 @@ public Action Timer_RandomizeNextmap(Handle timer)
 		g_OldMapList.Erase(0);
 	}
 
-	LogAction(-1, -1, "RandomCycle has chosen %s for the nextmap.", map);	
+	LogAction(-1, -1, "RandomCycle has chosen %s for the nextmap.", map);
 
 	return Plugin_Stop;
 }

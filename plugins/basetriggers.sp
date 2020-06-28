@@ -73,7 +73,7 @@ public void OnPluginStart()
 	LoadTranslations("common.phrases");
 	LoadTranslations("basetriggers.phrases");
 	
-	g_Cvar_TriggerShow = CreateConVar("sm_trigger_show", "0", "Display triggers message to all players? (0 off, 1 on, def. 0)", 0, true, 0.0, true, 1.0);	
+	g_Cvar_TriggerShow = CreateConVar("sm_trigger_show", "0", "Display triggers message to all players? (0 off, 1 on, def. 0)", 0, true, 0.0, true, 1.0);
 	g_Cvar_TimeleftInterval = CreateConVar("sm_timeleft_interval", "0.0", "Display timeleft every x seconds. Default 0.", 0, true, 0.0, true, 1800.0);
 	g_Cvar_FriendlyFire = FindConVar("mp_friendlyfire");
 	
@@ -84,7 +84,7 @@ public void OnPluginStart()
 	
 	g_Cvar_TimeleftInterval.AddChangeHook(ConVarChange_TimeleftInterval);
 
-	char folder[64];   	 
+	char folder[64];
 	GetGameFolderName(folder, sizeof(folder));
 
 	if (strcmp(folder, "insurgency") == 0)
@@ -118,20 +118,20 @@ public void OnPluginStart()
 
 public void OnMapStart()
 {
-	g_TotalRounds = 0;	
+	g_TotalRounds = 0;
 }
 
 /* Round count tracking */
 public void Event_TFRestartRound(Event event, const char[] name, bool dontBroadcast)
 {
 	/* Game got restarted - reset our round count tracking */
-	g_TotalRounds = 0;	
+	g_TotalRounds = 0;
 }
 
 public void Event_GameStart(Event event, const char[] name, bool dontBroadcast)
 {
 	/* Game got restarted - reset our round count tracking */
-	g_TotalRounds = 0;	
+	g_TotalRounds = 0;
 }
 
 public void Event_TeamPlayWinPanel(Event event, const char[] name, bool dontBroadcast)
@@ -171,7 +171,7 @@ public void ConVarChange_TimeleftInterval(ConVar convar, const char[] oldValue, 
 	{
 		if (g_Timer_TimeShow != null)
 		{
-			KillTimer(g_Timer_TimeShow);		
+			KillTimer(g_Timer_TimeShow);
 		}
 		
 		return;
@@ -188,7 +188,7 @@ public void ConVarChange_TimeleftInterval(ConVar convar, const char[] oldValue, 
 
 public Action Timer_DisplayTimeleft(Handle timer)
 {
-	ShowTimeLeft(0, TIMELEFT_ALL_ALWAYS);	
+	ShowTimeLeft(0, TIMELEFT_ALL_ALWAYS);
 }
 
 public Action Command_Timeleft(int client, int args)
@@ -209,7 +209,7 @@ public Action Command_Nextmap(int client, int args)
 	
 	if (mapchooser && EndOfMapVoteEnabled() && !HasEndOfMapVoteFinished())
 	{
-		ReplyToCommand(client, "[SM] %t", "Pending Vote");			
+		ReplyToCommand(client, "[SM] %t", "Pending Vote");
 	}
 	else
 	{
@@ -303,7 +303,7 @@ public void OnClientSayCommand_Post(int client, const char[] command, const char
 		{
 			if (mapchooser && EndOfMapVoteEnabled() && !HasEndOfMapVoteFinished())
 			{
-				PrintToChatAll("[SM] %t", "Pending Vote");			
+				PrintToChatAll("[SM] %t", "Pending Vote");
 			}
 			else
 			{
@@ -314,7 +314,7 @@ public void OnClientSayCommand_Post(int client, const char[] command, const char
 		{
 			if (mapchooser && EndOfMapVoteEnabled() && !HasEndOfMapVoteFinished())
 			{
-				PrintToChat(client, "[SM] %t", "Pending Vote");			
+				PrintToChat(client, "[SM] %t", "Pending Vote");
 			}
 			else
 			{
@@ -339,7 +339,7 @@ void ShowTimeLeft(int client, int who)
 	if (who == TIMELEFT_ALL_ALWAYS
 		|| (who == TIMELEFT_ALL_MAYBE && g_Cvar_TriggerShow.IntValue))
 	{
-		client = 0;	
+		client = 0;
 	}
 	
 	int timeleft;

@@ -55,7 +55,7 @@ public void AdminMenu_ReloadAdmins(TopMenu topmenu,
 	else if (action == TopMenuAction_SelectOption)
 	{
 		PerformReloadAdmins(param);
-		RedisplayAdminMenu(topmenu, param);	
+		RedisplayAdminMenu(topmenu, param);
 	}
 }
 

@@ -67,7 +67,7 @@ void PerformBlind(int client, int target, int amount)
 		BfWrite bf = UserMessageToBfWrite(message);
 		bf.WriteShort(duration);
 		bf.WriteShort(holdtime);
-		bf.WriteShort(flags);		
+		bf.WriteShort(flags);
 		bf.WriteByte(color[0]);
 		bf.WriteByte(color[1]);
 		bf.WriteByte(color[2]);

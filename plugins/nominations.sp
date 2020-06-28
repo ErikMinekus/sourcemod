@@ -108,7 +108,7 @@ public void OnNominationRemoved(const char[] map, int owner)
 	/* Is the map in our list? */
 	if (!g_mapTrie.GetValue(resolvedMap, status))
 	{
-		return;	
+		return;
 	}
 	
 	/* Was the map disabled due to being nominated */
@@ -136,7 +136,7 @@ public Action Command_Addmap(int client, int args)
 	{
 		// We couldn't resolve the map entry to a filename, so...
 		ReplyToCommand(client, "%t", "Map was not found", mapname);
-		return Plugin_Handled;		
+		return Plugin_Handled;
 	}
 	
 	char displayName[PLATFORM_MAX_PATH];
@@ -146,7 +146,7 @@ public Action Command_Addmap(int client, int args)
 	if (!g_mapTrie.GetValue(resolvedMap, status))
 	{
 		ReplyToCommand(client, "%t", "Map was not found", displayName);
-		return Plugin_Handled;		
+		return Plugin_Handled;
 	}
 	
 	NominateResult result = NominateMap(resolvedMap, true, 0);
@@ -156,7 +156,7 @@ public Action Command_Addmap(int client, int args)
 		/* We assume already in vote is the casue because the maplist does a Map Validity check and we forced, so it can't be full */
 		ReplyToCommand(client, "%t", "Map Already In Vote", displayName);
 		
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	
@@ -166,7 +166,7 @@ public Action Command_Addmap(int client, int args)
 	ReplyToCommand(client, "%t", "Map Inserted", displayName);
 	LogAction(client, -1, "\"%L\" inserted map \"%s\".", client, mapname);
 
-	return Plugin_Handled;		
+	return Plugin_Handled;
 }
 
 public void OnClientSayCommand_Post(int client, const char[] command, const char[] sArgs)
@@ -295,7 +295,7 @@ void AttemptNominate(int client, const char[] map, int size)
 	{
 		// We couldn't resolve the map entry to a filename, so...
 		ReplyToCommand(client, "%t", "Map was not found", mapname);
-		return;		
+		return;
 	}
 	
 	char displayName[PLATFORM_MAX_PATH];
@@ -305,7 +305,7 @@ void AttemptNominate(int client, const char[] map, int size)
 	if (!g_mapTrie.GetValue(mapname, status))
 	{
 		ReplyToCommand(client, "%t", "Map was not found", displayName);
-		return;		
+		return;
 	}
 	
 	if ((status & MAPSTATUS_DISABLED) == MAPSTATUS_DISABLED)
@@ -341,7 +341,7 @@ void AttemptNominate(int client, const char[] map, int size)
 			ReplyToCommand(client, "[SM] %t", "Max Nominations");
 		}
 		
-		return;	
+		return;
 	}
 	
 	/* Map was nominated! - Disable the menu item and update the trie */
@@ -452,7 +452,7 @@ public int MenuHandler_MapSelect(Menu menu, MenuAction action, int param1, int p
 			
 			if ((status & MAPSTATUS_DISABLED) == MAPSTATUS_DISABLED)
 			{
-				return ITEMDRAW_DISABLED;	
+				return ITEMDRAW_DISABLED;
 			}
 
 			return ITEMDRAW_DEFAULT;

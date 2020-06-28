@@ -94,7 +94,7 @@ public Action Command_VoteAlltalk(int client, int args)
 	if (args > 0)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_votealltalk");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	DisplayVoteAllTalkMenu(client);

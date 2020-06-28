@@ -342,7 +342,7 @@ public Action Command_Unban(int client, int args)
 	char arg[50];
 	GetCmdArgString(arg, sizeof(arg));
 
-	ReplaceString(arg, sizeof(arg), "\"", "");	
+	ReplaceString(arg, sizeof(arg), "\"", "");
 
 	int ban_flags;
 	if (IsCharNumeric(arg[0]))

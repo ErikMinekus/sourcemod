@@ -74,7 +74,7 @@ void UnfreezeClient(int client)
 		{
 			float vec[3];
 			GetClientAbsOrigin(client, vec);
-			vec[2] += 10;	
+			vec[2] += 10;
 			
 			GetClientEyePosition(client, vec);
 			EmitAmbientSound(g_FreezeSound, vec, client, SNDLEVEL_RAIDSIREN);

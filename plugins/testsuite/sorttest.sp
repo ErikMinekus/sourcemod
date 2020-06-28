@@ -190,7 +190,7 @@ PrintADTArrayIntegers(Handle:array)
 	new size = GetArraySize(array);
 	for (new i=0; i<size;i++)
 	{
-		PrintToServer("array[%d] = %d", i, GetArrayCell(array, i));	
+		PrintToServer("array[%d] = %d", i, GetArrayCell(array, i));
 	}
 }
 
@@ -229,7 +229,7 @@ PrintADTArrayFloats(Handle:array)
 	new size = GetArraySize(array);
 	for (new i=0; i<size;i++)
 	{
-		PrintToServer("array[%d] = %f", i, float:GetArrayCell(array, i));	
+		PrintToServer("array[%d] = %f", i, float:GetArrayCell(array, i));
 	}
 }
 
@@ -269,7 +269,7 @@ PrintADTArrayStrings(Handle:array)
 	for (new i=0; i<size;i++)
 	{
 		GetArrayString(array, i, buffer, sizeof(buffer));
-		PrintToServer("array[%d] = %s", i, buffer);	
+		PrintToServer("array[%d] = %s", i, buffer);
 	}
 }
 

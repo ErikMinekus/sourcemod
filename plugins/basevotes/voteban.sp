@@ -130,7 +130,7 @@ public Action Command_Voteban(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_voteban <player> [reason]");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	if (IsVoteInProgress())

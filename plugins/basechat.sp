@@ -69,7 +69,7 @@ public void OnPluginStart()
 	/* HintText does not work on Dark Messiah */
 	if (g_GameEngine != Engine_DarkMessiah)
 	{
-		RegAdminCmd("sm_hsay", Command_SmHsay, ADMFLAG_CHAT, "sm_hsay <message> - sends hint message to all players");	
+		RegAdminCmd("sm_hsay", Command_SmHsay, ADMFLAG_CHAT, "sm_hsay <message> - sends hint message to all players");
 	}
 	
 	RegAdminCmd("sm_tsay", Command_SmTsay, ADMFLAG_CHAT, "sm_tsay [color] <message> - sends top-left message to all players");
@@ -157,7 +157,7 @@ public Action Command_SmSay(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_say <message>");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	char text[192];
@@ -166,7 +166,7 @@ public Action Command_SmSay(int client, int args)
 	SendChatToAll(client, text);
 	LogAction(client, -1, "\"%L\" triggered sm_say (text %s)", client, text);
 	
-	return Plugin_Handled;		
+	return Plugin_Handled;
 }
 
 public Action Command_SmCsay(int client, int args)
@@ -174,7 +174,7 @@ public Action Command_SmCsay(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_csay <message>");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	char text[192];
@@ -184,7 +184,7 @@ public Action Command_SmCsay(int client, int args)
 	
 	LogAction(client, -1, "\"%L\" triggered sm_csay (text %s)", client, text);
 	
-	return Plugin_Handled;		
+	return Plugin_Handled;
 }
 
 public Action Command_SmHsay(int client, int args)
@@ -192,7 +192,7 @@ public Action Command_SmHsay(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_hsay <message>");
-		return Plugin_Handled;  
+		return Plugin_Handled;
 	}
 	
 	char text[192];
@@ -212,7 +212,7 @@ public Action Command_SmHsay(int client, int args)
 	
 	LogAction(client, -1, "\"%L\" triggered sm_hsay (text %s)", client, text);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_SmTsay(int client, int args)
@@ -220,7 +220,7 @@ public Action Command_SmTsay(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_tsay <message>");
-		return Plugin_Handled;  
+		return Plugin_Handled;
 	}
 	
 	char text[192], colorStr[16];
@@ -249,7 +249,7 @@ public Action Command_SmTsay(int client, int args)
 
 	LogAction(client, -1, "\"%L\" triggered sm_tsay (text %s)", client, text);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_SmChat(int client, int args)
@@ -257,7 +257,7 @@ public Action Command_SmChat(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_chat <message>");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	char text[192];
@@ -266,7 +266,7 @@ public Action Command_SmChat(int client, int args)
 	SendChatToAdmins(client, text);
 	LogAction(client, -1, "\"%L\" triggered sm_chat (text %s)", client, text);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_SmPsay(int client, int args)
@@ -274,7 +274,7 @@ public Action Command_SmPsay(int client, int args)
 	if (args < 2)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_psay <name or #userid> <message>");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	char text[192], arg[64];
@@ -285,11 +285,11 @@ public Action Command_SmPsay(int client, int args)
 	int target = FindTarget(client, arg, true, false);
 		
 	if (target == -1)
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	
 	SendPrivateChat(client, target, text[len]);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_SmMsay(int client, int args)
@@ -297,7 +297,7 @@ public Action Command_SmMsay(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_msay <message>");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	char text[192];
@@ -307,7 +307,7 @@ public Action Command_SmMsay(int client, int args)
 
 	LogAction(client, -1, "\"%L\" triggered sm_msay (text %s)", client, text);
 	
-	return Plugin_Handled;		
+	return Plugin_Handled;
 }
 
 int FindColor(const char[] color)
@@ -373,7 +373,7 @@ void SendChatToAdmins(int from, const char[] message)
 void SendDialogToOne(int client, int color, const char[] text, any ...)
 {
 	char message[100];
-	VFormat(message, sizeof(message), text, 4);	
+	VFormat(message, sizeof(message), text, 4);
 	
 	KeyValues kv = new KeyValues("Stuff", "title", message);
 	kv.SetColor("color", g_Colors[color][0], g_Colors[color][1], g_Colors[color][2], 255);

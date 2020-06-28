@@ -128,7 +128,7 @@ public Action Command_Votekick(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_votekick <player> [reason]");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	if (IsVoteInProgress())

@@ -91,7 +91,7 @@ public void OnPluginStart()
 	
 	RegAdminCmd("sm_unmute", Command_Unmute, ADMFLAG_CHAT, "sm_unmute <player> - Restores a player's ability to use voice.");
 	RegAdminCmd("sm_ungag", Command_Ungag, ADMFLAG_CHAT, "sm_ungag <player> - Restores a player's ability to use chat.");
-	RegAdminCmd("sm_unsilence", Command_Unsilence, ADMFLAG_CHAT, "sm_unsilence <player> - Restores a player's ability to use voice and chat.");	
+	RegAdminCmd("sm_unsilence", Command_Unsilence, ADMFLAG_CHAT, "sm_unsilence <player> - Restores a player's ability to use voice and chat.");
 	
 	g_Cvar_Deadtalk.AddChangeHook(ConVarChange_Deadtalk);
 
@@ -140,7 +140,7 @@ public void ConVarChange_Deadtalk(ConVar convar, const char[] oldValue, const ch
 	else if (g_Hooked)
 	{
 		UnhookEvent("player_spawn", Event_PlayerSpawn);
-		UnhookEvent("player_death", Event_PlayerDeath);		
+		UnhookEvent("player_death", Event_PlayerDeath);
 		g_Hooked = false;
 	}
 }
@@ -202,7 +202,7 @@ public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast
 	
 	if (!client)
 	{
-		return;	
+		return;
 	}
 	
 	if (playerstate[client].isMuted)
@@ -221,7 +221,7 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
 	
 	if (!client)
 	{
-		return;	
+		return;
 	}
 	
 	if (playerstate[client].isMuted)

@@ -92,7 +92,7 @@ public Action Command_VoteGravity(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_votegravity <amount> [amount2] ... [amount5]");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	if (IsVoteInProgress())
@@ -110,7 +110,7 @@ public Action Command_VoteGravity(int client, int args)
 	GetCmdArgString(text, sizeof(text));
 
 	char items[5][64];
-	int count;	
+	int count;
 	int len, pos;
 	
 	while (pos != -1 && count < 5)
@@ -134,5 +134,5 @@ public Action Command_VoteGravity(int client, int args)
 	
 	DisplayVoteGravityMenu(client, count, items);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }

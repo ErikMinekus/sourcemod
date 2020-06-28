@@ -63,7 +63,7 @@ public Action:Command_SetString(args)
 
 	delete strct;
 
-	return Plugin_Handled;	
+	return Plugin_Handled;
 	
 }
 

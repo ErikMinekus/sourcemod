@@ -231,13 +231,13 @@ int FormatTimeDuration(char[] buffer, int maxlen, int time)
 	
 	if (hours > 0)
 	{
-		return Format(buffer, maxlen, "%ih %im", hours, (seconds >= 30) ? minutes+1 : minutes);		
+		return Format(buffer, maxlen, "%ih %im", hours, (seconds >= 30) ? minutes+1 : minutes);
 	}
 	
 	if (minutes > 0)
 	{
-		return Format(buffer, maxlen, "%im", (seconds >= 30) ? minutes+1 : minutes);		
+		return Format(buffer, maxlen, "%im", (seconds >= 30) ? minutes+1 : minutes);
 	}
 	
-	return Format(buffer, maxlen, "%is", seconds);	
+	return Format(buffer, maxlen, "%is", seconds);
 }

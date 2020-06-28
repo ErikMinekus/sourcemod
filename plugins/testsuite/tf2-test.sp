@@ -95,7 +95,7 @@ public Action:Command_Disguise(client, args)
 	
 	if (args < 2)
 	{
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	new one = GetCmdArgInt(1);

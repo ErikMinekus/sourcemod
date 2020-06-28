@@ -21,7 +21,7 @@ public OnPluginStart()
 	SetCookiePrefabMenu(g_Cookie3, CookieMenu_OnOff, "Cookie 3");
 	SetCookiePrefabMenu(g_Cookie4, CookieMenu_OnOff_Int, "Cookie 4");
 	
-	SetCookieMenuItem(CookieSelected, g_Cookie5, "Get Cookie 5 value");	
+	SetCookieMenuItem(CookieSelected, g_Cookie5, "Get Cookie 5 value");
 }
 
 public CookieSelected(client, CookieMenuAction:action, any:info, String:buffer[], maxlen)
@@ -57,5 +57,5 @@ public OnClientCookiesCached(client)
 	LogMessage("Test: %s",hi);
 	SetClientCookie(client, g_Cookie, "somethingsomething'");
 	GetClientCookie(client, g_Cookie, hi, sizeof(hi));
-	LogMessage("Test: %s",hi);	
+	LogMessage("Test: %s",hi);
 }

@@ -146,7 +146,7 @@ void ReadAdminLine(const char[] line)
 	}
 	
 	/* Read flags */
-	char flags[64];	
+	char flags[64];
 	cur_idx = BreakString(line[idx], flags, sizeof(flags));
 	idx += cur_idx;
 
@@ -218,7 +218,7 @@ void ReadAdminLine(const char[] line)
 		{
 			/* We should never reach here */
 			RemoveAdmin(admin);
-			ParseError("Failed to bind identity %s (method %s)", auth[auth_offset], auth_method);			
+			ParseError("Failed to bind identity %s (method %s)", auth[auth_offset], auth_method);
 		}
 	}
 }

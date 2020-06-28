@@ -67,7 +67,7 @@ MathBench()
 	StopProfiling(g_Prof);
 	PrintToServer("int benchmark: %f seconds", GetProfilerTime(g_Prof));
 
-	StartProfiling(g_Prof);	
+	StartProfiling(g_Prof);
 	new Float:fa, Float:fb, Float:fc
 	new int1
 	iter = MATH_FLOAT_LOOPS;

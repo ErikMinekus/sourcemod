@@ -38,7 +38,7 @@ ConVar g_Cvar_BeaconRadius;
 void CreateBeacon(int client)
 {
 	g_BeaconSerial[client] = ++g_Serial_Gen;
-	CreateTimer(1.0, Timer_Beacon, client | (g_Serial_Gen << 7), DEFAULT_TIMER_FLAGS);	
+	CreateTimer(1.0, Timer_Beacon, client | (g_Serial_Gen << 7), DEFAULT_TIMER_FLAGS);
 }
 
 void KillBeacon(int client)
@@ -113,7 +113,7 @@ public Action Timer_Beacon(Handle timer, any value)
 	if (g_BlipSound[0])
 	{
 		GetClientEyePosition(client, vec);
-		EmitAmbientSound(g_BlipSound, vec, client, SNDLEVEL_RAIDSIREN);	
+		EmitAmbientSound(g_BlipSound, vec, client, SNDLEVEL_RAIDSIREN);
 	}
 		
 	return Plugin_Continue;

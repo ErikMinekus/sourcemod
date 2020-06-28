@@ -36,7 +36,7 @@ float g_DrugAngles[20] = {0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 20.0, 15.0, 10.0, 5.
 
 void CreateDrug(int client)
 {
-	g_DrugTimers[client] = CreateTimer(1.0, Timer_Drug, client, TIMER_REPEAT);	
+	g_DrugTimers[client] = CreateTimer(1.0, Timer_Drug, client, TIMER_REPEAT);
 }
 
 void KillDrug(int client)
@@ -48,7 +48,7 @@ void KillDrug(int client)
 	
 	angs[2] = 0.0;
 	
-	TeleportEntity(client, NULL_VECTOR, angs, NULL_VECTOR);	
+	TeleportEntity(client, NULL_VECTOR, angs, NULL_VECTOR);
 	
 	int clients[2];
 	clients[0] = client;
@@ -85,7 +85,7 @@ void KillDrug(int client)
 void KillDrugTimer(int client)
 {
 	KillTimer(g_DrugTimers[client]);
-	g_DrugTimers[client] = null;	
+	g_DrugTimers[client] = null;
 }
 
 void KillAllDrugs()
@@ -168,7 +168,7 @@ public Action Timer_Drug(Handle timer, any client)
 	TeleportEntity(client, NULL_VECTOR, angs, NULL_VECTOR);
 	
 	int clients[2];
-	clients[0] = client;	
+	clients[0] = client;
 	
 	int duration = 255;
 	int holdtime = 255;

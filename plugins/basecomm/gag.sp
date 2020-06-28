@@ -370,7 +370,7 @@ public Action Command_Mute(int client, int args)
 		ShowActivity2(client, "[SM] ", "%t", "Muted target", "_s", target_name);
 	}
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_Gag(int client, int args)
@@ -418,7 +418,7 @@ public Action Command_Gag(int client, int args)
 		ShowActivity2(client, "[SM] ", "%t", "Gagged target", "_s", target_name);
 	}
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_Silence(int client, int args)
@@ -466,7 +466,7 @@ public Action Command_Silence(int client, int args)
 		ShowActivity2(client, "[SM] ", "%t", "Silenced target", "_s", target_name);
 	}
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_Unmute(int client, int args)
@@ -519,7 +519,7 @@ public Action Command_Unmute(int client, int args)
 		ShowActivity2(client, "[SM] ", "%t", "Unmuted target", "_s", target_name);
 	}
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_Ungag(int client, int args)
@@ -567,7 +567,7 @@ public Action Command_Ungag(int client, int args)
 		ShowActivity2(client, "[SM] ", "%t", "Ungagged target", "_s", target_name);
 	}
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public Action Command_Unsilence(int client, int args)
@@ -615,5 +615,5 @@ public Action Command_Unsilence(int client, int args)
 		ShowActivity2(client, "[SM] ", "%t", "Unsilenced target", "_s", target_name);
 	}
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }

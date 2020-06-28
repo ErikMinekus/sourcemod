@@ -235,7 +235,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 			{
 				case (gravity):
 				{
-					PrintToChatAll("[SM] %t", "Cvar changed", "sv_gravity", item);					
+					PrintToChatAll("[SM] %t", "Cvar changed", "sv_gravity", item);
 					LogAction(-1, -1, "Changing gravity to %s due to vote.", item);
 					g_Cvar_Gravity.IntValue = StringToInt(item);
 				}
@@ -249,10 +249,10 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 					}
 					else
 					{
-						PrintToChatAll("[SM] %t", "Set target on fire", "_s", g_voteInfo[VOTE_NAME]);					
+						PrintToChatAll("[SM] %t", "Set target on fire", "_s", g_voteInfo[VOTE_NAME]);
 						LogAction(-1, voteTarget, "Vote burn successful, igniting \"%L\"", voteTarget);
 						
-						IgniteEntity(voteTarget, 19.8);	
+						IgniteEntity(voteTarget, 19.8);
 					}
 				}
 				
@@ -265,7 +265,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 					}
 					else
 					{
-						PrintToChatAll("[SM] %t", "Slayed player", g_voteInfo[VOTE_NAME]);					
+						PrintToChatAll("[SM] %t", "Slayed player", g_voteInfo[VOTE_NAME]);
 						LogAction(-1, voteTarget, "Vote slay successful, slaying \"%L\"", voteTarget);
 						
 						ExtinguishEntity(voteTarget);

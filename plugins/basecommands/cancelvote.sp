@@ -58,7 +58,7 @@ public void AdminMenu_CancelVote(TopMenu topmenu,
 	else if (action == TopMenuAction_SelectOption)
 	{
 		PerformCancelVote(param);
-		RedisplayAdminMenu(topmenu, param);	
+		RedisplayAdminMenu(topmenu, param);
 	}
 	else if (action == TopMenuAction_DrawOption)
 	{

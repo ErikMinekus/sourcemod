@@ -68,7 +68,7 @@ void DisplayVoteMapMenu(int client, int mapCount, char[][] maps)
 	}
 	
 	g_hVoteMenu.ExitButton = false;
-	g_hVoteMenu.DisplayVoteToAll(20);		
+	g_hVoteMenu.DisplayVoteToAll(20);
 }
 
 void ResetMenu()
@@ -90,7 +90,7 @@ void ConfirmVote(int client)
 	Format(itemtext, sizeof(itemtext), "%T", "Start the Vote", client);
 	menu.AddItem("Confirm", itemtext);
 	
-	menu.Display(client, MENU_TIME_FOREVER);	
+	menu.Display(client, MENU_TIME_FOREVER);
 }
 
 public int MenuHandler_Confirm(Menu menu, MenuAction action, int param1, int param2)
@@ -220,7 +220,7 @@ public Action Command_Votemap(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_votemap <mapname> [mapname2] ... [mapname5]");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	if (IsVoteInProgress())
@@ -238,7 +238,7 @@ public Action Command_Votemap(int client, int args)
 	GetCmdArgString(text, sizeof(text));
 
 	char maps[5][PLATFORM_MAX_PATH];
-	int mapCount;	
+	int mapCount;
 	int len, pos;
 	
 	while (pos != -1 && mapCount < 5)
@@ -261,7 +261,7 @@ public Action Command_Votemap(int client, int args)
 
 	DisplayVoteMapMenu(client, mapCount, maps);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 Handle g_map_array = null;

@@ -53,7 +53,7 @@ public void OnPluginStart()
 	LoadTranslations("clientprefs.phrases");
 	
 	RegConsoleCmd("sm_cookies", Command_Cookie, "sm_cookies <name> [value]");
-	RegConsoleCmd("sm_settings", Command_Settings);	
+	RegConsoleCmd("sm_settings", Command_Settings);
 }
 
 public Action Command_Cookie(int client, int args)
@@ -83,14 +83,14 @@ public Action Command_Cookie(int client, int args)
 			}
 		}
 		
-		delete iter;		
+		delete iter;
 		return Plugin_Handled;
 	}
 	
 	if (client == 0)
 	{
 		PrintToServer("%T", "No Console", LANG_SERVER);
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	char name[30];
@@ -165,7 +165,7 @@ public Action Command_Settings(int client, int args)
 	if (client == 0)
 	{
 		PrintToServer("%T", "No Console", LANG_SERVER);
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	ShowCookieMenu(client);

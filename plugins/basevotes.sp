@@ -107,9 +107,9 @@ public void OnPluginStart()
 	*/
 
 	g_Cvar_Limits[0] = CreateConVar("sm_vote_map", "0.60", "percent required for successful map vote.", 0, true, 0.05, true, 1.0);
-	g_Cvar_Limits[1] = CreateConVar("sm_vote_kick", "0.60", "percent required for successful kick vote.", 0, true, 0.05, true, 1.0);	
-	g_Cvar_Limits[2] = CreateConVar("sm_vote_ban", "0.60", "percent required for successful ban vote.", 0, true, 0.05, true, 1.0);		
-	g_Cvar_Voteban = CreateConVar("sm_voteban_time", "30", "length of ban in minutes.", 0, true, 0.0);	
+	g_Cvar_Limits[1] = CreateConVar("sm_vote_kick", "0.60", "percent required for successful kick vote.", 0, true, 0.05, true, 1.0);
+	g_Cvar_Limits[2] = CreateConVar("sm_vote_ban", "0.60", "percent required for successful ban vote.", 0, true, 0.05, true, 1.0);
+	g_Cvar_Voteban = CreateConVar("sm_voteban_time", "30", "length of ban in minutes.", 0, true, 0.0);
 
 	AutoExecConfig(true, "basevotes");
 	
@@ -165,7 +165,7 @@ public Action Command_Vote(int client, int args)
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_vote <question> [Answer1] [Answer2] ... [Answer5]");
-		return Plugin_Handled;	
+		return Plugin_Handled;
 	}
 	
 	if (IsVoteInProgress())
@@ -183,7 +183,7 @@ public Action Command_Vote(int client, int args)
 	GetCmdArgString(text, sizeof(text));
 
 	char answers[5][64];
-	int answerCount;	
+	int answerCount;
 	int len = BreakString(text, g_voteArg, sizeof(g_voteArg));
 	int pos = len;
 	
@@ -220,9 +220,9 @@ public Action Command_Vote(int client, int args)
 	}
 	
 	g_hVoteMenu.ExitButton = false;
-	g_hVoteMenu.DisplayVoteToAll(20);		
+	g_hVoteMenu.DisplayVoteToAll(20);
 	
-	return Plugin_Handled;	
+	return Plugin_Handled;
 }
 
 public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int param2)
@@ -320,7 +320,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 					PrintToChatAll("[SM] %t", "Changing map", displayName);
 					DataPack dp;
 					CreateDataTimer(5.0, Timer_ChangeMap, dp);
-					dp.WriteString(item);		
+					dp.WriteString(item);
 				}
 					
 				case (kick):
@@ -337,10 +337,10 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 							strcopy(g_voteArg, sizeof(g_voteArg), "Votekicked");
 						}
 						
-						PrintToChatAll("[SM] %t", "Kicked target", "_s", g_voteInfo[VOTE_NAME]);					
+						PrintToChatAll("[SM] %t", "Kicked target", "_s", g_voteInfo[VOTE_NAME]);
 						LogAction(-1, voteTarget, "Vote kick successful, kicked \"%L\" (reason \"%s\")", voteTarget, g_voteArg);
 						
-						ServerCommand("kickid %d \"%s\"", g_voteTarget, g_voteArg);					
+						ServerCommand("kickid %d \"%s\"", g_voteTarget, g_voteArg);
 					}
 				}
 					

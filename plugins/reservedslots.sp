@@ -92,7 +92,7 @@ public void OnMapStart()
 
 public void OnConfigsExecuted()
 {
-	CheckHiddenSlots();	
+	CheckHiddenSlots();
 }
 
 public Action OnTimedKick(Handle timer, any client)
@@ -196,7 +196,7 @@ public void OnClientDisconnect_Post(int client)
 	if (g_isAdmin[client])
 	{
 		g_adminCount--;
-		g_isAdmin[client] = false;	
+		g_isAdmin[client] = false;
 	}
 }
 

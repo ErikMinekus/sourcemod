@@ -107,7 +107,7 @@ public Action HelpCmd(int client, int args)
 			PrintToConsole(client, "%t", "No matching results found");
 		}
 	} else {
-		PrintToConsole(client, "%t", "SM help commands");		
+		PrintToConsole(client, "%t", "SM help commands");
 
 		/* Skip the first N commands if we need to */
 		if (PageNum > 1)
