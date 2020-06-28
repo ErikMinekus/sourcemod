@@ -110,7 +110,7 @@ public int MenuHandler_Rename(Menu menu, MenuAction action, int param1, int para
 			RandomizeName(target);
 			ShowActivity2(param1, "[SM] ", "%t", "Renamed target", "_s", name);
 			PerformRename(param1, target);
-		}		
+		}
 		DisplayRenameTargetMenu(param1);
 	}
 }

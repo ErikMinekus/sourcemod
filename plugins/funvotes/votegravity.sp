@@ -56,7 +56,7 @@ void DisplayVoteGravityMenu(int client, int count, char[][] items)
 		for (int i = 0; i < count; i++)
 		{
 			g_hVoteMenu.AddItem(items[i], items[i]);
-		}	
+		}
 	}
 	
 	g_hVoteMenu.ExitButton = false;
@@ -81,7 +81,7 @@ public void AdminMenu_VoteGravity(TopMenu topmenu,
 		DisplayVoteGravityMenu(param,5, items);
 	}
 	else if (action == TopMenuAction_DrawOption)
-	{	
+	{
 		/* disable this option if a vote is already running */
 		buffer[0] = !IsNewVoteAllowed() ? ITEMDRAW_IGNORE : ITEMDRAW_DEFAULT;
 	}
@@ -114,7 +114,7 @@ public Action Command_VoteGravity(int client, int args)
 	int len, pos;
 	
 	while (pos != -1 && count < 5)
-	{	
+	{
 		pos = BreakString(text[len], items[count], sizeof(items[]));
 		
 		float temp;
@@ -122,14 +122,14 @@ public Action Command_VoteGravity(int client, int args)
 		{
 			ReplyToCommand(client, "[SM] %t", "Invalid Amount");
 			return Plugin_Handled;
-		}		
+		}
 
 		count++;
 		
 		if (pos != -1)
 		{
 			len += pos;
-		}	
+		}
 	}
 	
 	DisplayVoteGravityMenu(client, count, items);

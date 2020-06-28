@@ -13,7 +13,7 @@ new Handle:g_GlobalFwd = null;
 new Handle:g_PrivateFwd = null;
 
 public OnPluginStart()
-{	
+{
 	RegServerCmd("test_create_gforward", Command_CreateGlobalForward);
 	RegServerCmd("test_create_pforward", Command_CreatePrivateForward);
 	RegServerCmd("test_exec_gforward", Command_ExecGlobalForward);

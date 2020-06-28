@@ -146,7 +146,7 @@ public int MenuHandler_Slap(Menu menu, MenuAction action, int param1, int param2
 		else if (!IsPlayerAlive(target))
 		{
 			ReplyToCommand(param1, "[SM] %t", "Player has since died");
-		}	
+		}
 		else
 		{
 			char name[MAX_NAME_LENGTH];

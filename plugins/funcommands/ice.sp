@@ -319,7 +319,7 @@ public Action Timer_FreezeBomb(Handle timer, any value)
 				}
 				
 				FreezeClient(i, g_Cvar_FreezeDuration.IntValue);
-			}		
+			}
 		}
 		return Plugin_Stop;
 	}
@@ -496,7 +496,7 @@ public Action Command_Freeze(int client, int args)
 	{
 		ReplyToCommand(client, "[SM] %t", "Invalid Amount");
 		return Plugin_Handled;
-	}	
+	}
 
 	char target_name[MAX_TARGET_LENGTH];
 	int target_list[MAXPLAYERS], target_count;

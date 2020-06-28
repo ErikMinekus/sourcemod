@@ -96,7 +96,7 @@ public void OnConfigsExecuted()
 }
 
 public Action OnTimedKick(Handle timer, any client)
-{	
+{
 	if (!client || !IsClientInGame(client))
 	{
 		return Plugin_Handled;
@@ -137,7 +137,7 @@ public void OnClientPostAdminCheck(int client)
 			CreateTimer(0.1, OnTimedKick, client);
 		}
 		else if (type == 1)
-		{	
+		{
 			if (clients > limit)
 			{
 				if (flags & ADMFLAG_ROOT || flags & ADMFLAG_RESERVATION)
@@ -151,7 +151,7 @@ public void OnClientPostAdminCheck(int client)
 					}
 				}
 				else
-				{				
+				{
 					/* Kick player because there are no public slots left */
 					CreateTimer(0.1, OnTimedKick, client);
 				}
@@ -180,10 +180,10 @@ public void OnClientPostAdminCheck(int client)
 					}
 				}
 				else
-				{				
+				{
 					/* Kick player because there are no public slots left */
 					CreateTimer(0.1, OnTimedKick, client);
-				}		
+				}
 			}
 		}
 	}
@@ -230,7 +230,7 @@ public void SlotHideChanged(ConVar convar, const char[] oldValue, const char[] n
 void CheckHiddenSlots()
 {
 	if (sm_hide_slots.BoolValue)
-	{		
+	{
 		SetVisibleMaxSlots(GetClientCount(false), GetMaxHumanPlayers() - sm_reserved_slots.IntValue);
 	}
 }
@@ -269,7 +269,7 @@ int SelectKickClient()
 	float value;
 	
 	for (int i=1; i<=MaxClients; i++)
-	{	
+	{
 		if (!IsClientConnected(i))
 		{
 			continue;
@@ -300,7 +300,7 @@ int SelectKickClient()
 			}
 
 			if (IsClientObserver(i))
-			{			
+			{
 				specFound = true;
 				
 				if (value > highestSpecValue)

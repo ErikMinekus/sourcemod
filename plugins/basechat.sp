@@ -258,7 +258,7 @@ public Action Command_SmChat(int client, int args)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_chat <message>");
 		return Plugin_Handled;	
-	}	
+	}
 	
 	char text[192];
 	GetCmdArgString(text, sizeof(text));
@@ -275,7 +275,7 @@ public Action Command_SmPsay(int client, int args)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_psay <name or #userid> <message>");
 		return Plugin_Handled;	
-	}	
+	}
 	
 	char text[192], arg[64];
 	GetCmdArgString(text, sizeof(text));
@@ -366,7 +366,7 @@ void SendChatToAdmins(int from, const char[] message)
 				PrintToChat(i, " \x01\x0B\x04%t: \x01%s", fromAdmin ? "Chat admins" : "Chat to admins", from, message);
 			else
 				PrintToChat(i, "\x04%t: \x01%s", fromAdmin ? "Chat admins" : "Chat to admins", from, message);
-		}	
+		}
 	}
 }
 

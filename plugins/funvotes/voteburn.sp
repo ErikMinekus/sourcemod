@@ -86,7 +86,7 @@ public void AdminMenu_VoteBurn(TopMenu topmenu,
 		DisplayBurnTargetMenu(param);
 	}
 	else if (action == TopMenuAction_DrawOption)
-	{	
+	{
 		/* disable this option if a vote is already running */
 		buffer[0] = !IsNewVoteAllowed() ? ITEMDRAW_IGNORE : ITEMDRAW_DEFAULT;
 	}
@@ -144,7 +144,7 @@ public Action Command_VoteBurn(int client, int args)
 	{
 		ReplyToCommand(client, "[SM] %t", "Vote in Progress");
 		return Plugin_Handled;
-	}	
+	}
 	
 	if (!TestVoteDelay(client))
 	{

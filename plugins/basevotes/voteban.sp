@@ -82,7 +82,7 @@ public void AdminMenu_VoteBan(TopMenu topmenu,
 		DisplayBanTargetMenu(param);
 	}
 	else if (action == TopMenuAction_DrawOption)
-	{	
+	{
 		/* disable this option if a vote is already running */
 		buffer[0] = !IsNewVoteAllowed() ? ITEMDRAW_IGNORE : ITEMDRAW_DEFAULT;
 	}
@@ -137,7 +137,7 @@ public Action Command_Voteban(int client, int args)
 	{
 		ReplyToCommand(client, "[SM] %t", "Vote in Progress");
 		return Plugin_Handled;
-	}	
+	}
 	
 	if (!TestVoteDelay(client))
 	{

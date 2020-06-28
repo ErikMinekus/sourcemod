@@ -95,10 +95,10 @@ public void AdminMenu_Blind(TopMenu topmenu,
 		DisplayBlindMenu(param);
 	}
 	else if (action == TopMenuAction_DrawOption)
-	{	
+	{
 		// Disable if we could not find the user message id for Fade.
 		buffer[0] = ((g_FadeUserMsgId == INVALID_MESSAGE_ID) ? ITEMDRAW_IGNORE : ITEMDRAW_DEFAULT);
-	}	
+	}
 }
 
 void DisplayBlindMenu(int client)

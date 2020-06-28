@@ -277,7 +277,7 @@ public void OnMapEnd()
 	while (g_OldMapList.Length > g_Cvar_ExcludeMaps.IntValue)
 	{
 		g_OldMapList.Erase(0);
-	}	
+	}
 	
 	if (g_Cvar_PersistentMaps.BoolValue)
 	{
@@ -358,7 +358,7 @@ void SetupTimeleftTimer()
 			{
 				KillTimer(g_VoteTimer);
 				g_VoteTimer = null;
-			}	
+			}
 			
 			//g_VoteTimer = CreateTimer(float(time - startTime), Timer_StartMapVote, _, TIMER_FLAG_NO_MAPCHANGE);
 			DataPack data;
@@ -366,7 +366,7 @@ void SetupTimeleftTimer()
 			data.WriteCell(MapChange_MapEnd);
 			data.WriteCell(INVALID_HANDLE);
 			data.Reset();
-		}		
+		}
 	}
 }
 
@@ -433,12 +433,12 @@ public void Event_TeamPlayWinPanel(Event event, const char[] name, bool dontBroa
 			case 2:
 			{
 				CheckWinLimit(redscore);				
-			}			
+			}
 			//We need to do nothing on winning_team == 0 this indicates stalemate.
 			default:
 			{
 				return;
-			}			
+			}
 		}
 	}
 }
@@ -487,12 +487,12 @@ public void Event_RoundEnd(Event event, const char[] name, bool dontBroadcast)
 }
 
 public void CheckWinLimit(int winner_score)
-{	
+{
 	if (g_Cvar_Winlimit)
 	{
 		int winlimit = g_Cvar_Winlimit.IntValue;
 		if (winlimit)
-		{			
+		{
 			if (winner_score >= (winlimit - g_Cvar_StartRounds.IntValue))
 			{
 				InitiateVote(MapChange_MapEnd, null);
@@ -502,7 +502,7 @@ public void CheckWinLimit(int winner_score)
 }
 
 public void CheckMaxRounds(int roundcount)
-{		
+{
 	if (g_Cvar_Maxrounds)
 	{
 		int maxrounds = g_Cvar_Maxrounds.IntValue;
@@ -511,7 +511,7 @@ public void CheckMaxRounds(int roundcount)
 			if (roundcount >= (maxrounds - g_Cvar_StartRounds.IntValue))
 			{
 				InitiateVote(MapChange_MapEnd, null);
-			}			
+			}
 		}
 	}
 }
@@ -683,7 +683,7 @@ void InitiateVote(MapChange when, ArrayList inputlist=null)
 				char displayName[PLATFORM_MAX_PATH];
 				GetMapDisplayName(map, displayName, sizeof(displayName));
 				g_VoteMenu.AddItem(map, displayName);
-			}	
+			}
 		}
 	}
 	
@@ -744,7 +744,7 @@ public void Handler_VoteFinishedGeneric(Menu menu,
 			if (winlimit)
 			{
 				g_Cvar_Winlimit.IntValue = winlimit + g_Cvar_ExtendRoundStep.IntValue;
-			}					
+			}
 		}
 		
 		if (g_Cvar_Maxrounds)
@@ -807,7 +807,7 @@ public void Handler_VoteFinishedGeneric(Menu menu,
 		
 		PrintToChatAll("[SM] %t", "Nextmap Voting Finished", displayName, RoundToFloor(float(item_info[0][VOTEINFO_ITEM_VOTES])/float(num_votes)*100), num_votes);
 		LogAction(-1, -1, "Voting for next map has finished. Nextmap: %s.", map);
-	}	
+	}
 }
 
 public void Handler_MapVoteFinished(Menu menu,
@@ -874,7 +874,7 @@ public int Handler_MapVoteMenu(Menu menu, MenuAction action, int param1, int par
 
 			Panel panel = view_as<Panel>(param2);
 			panel.SetTitle(buffer);
-		}		
+		}
 		
 		case MenuAction_DisplayItem:
 		{
@@ -893,7 +893,7 @@ public int Handler_MapVoteMenu(Menu menu, MenuAction action, int param1, int par
 					return RedrawMenuItem(buffer);					
 				}
 			}
-		}		
+		}
 	
 		case MenuAction_VoteCancel:
 		{
@@ -1098,7 +1098,7 @@ public int Native_NominateMap(Handle plugin, int numParams)
 }
 
 bool InternalRemoveNominationByMap(char[] map)
-{	
+{
 	for (int i = 0; i < g_NominateList.Length; i++)
 	{
 		char oldmap[PLATFORM_MAX_PATH];
@@ -1139,7 +1139,7 @@ public int Native_RemoveNominationByMap(Handle plugin, int numParams)
 }
 
 bool InternalRemoveNominationByOwner(int owner)
-{	
+{
 	int index;
 
 	if (owner && ((index = g_NominateOwners.FindValue(owner)) != -1))
@@ -1163,7 +1163,7 @@ bool InternalRemoveNominationByOwner(int owner)
 
 /* native bool RemoveNominationByOwner(int owner); */
 public int Native_RemoveNominationByOwner(Handle plugin, int numParams)
-{	
+{
 	return InternalRemoveNominationByOwner(GetNativeCell(1));
 }
 

@@ -29,7 +29,7 @@ Places g_currentPlace[MAXPLAYERS+1];
  * What to put in the 'info' menu field (for PlayerList and Player_Team menus only)
  */
 enum PlayerMethod
-{		
+{
 	ClientId,				/** Client id number ( 1 - Maxplayers) */
 	UserId,					/** Client userid */
 	Name,					/** Client Name */
@@ -109,7 +109,7 @@ void BuildDynamicMenu()
 	TopMenuObject categoryId;
 	
 	do
-	{		
+	{
 		kvMenu.GetSectionName(buffer, sizeof(buffer));
 
 		kvMenu.GetString("admin", admin, sizeof(admin),"sm_admin");
@@ -133,7 +133,7 @@ void BuildDynamicMenu()
 		}
 		
 		do
-		{		
+		{
 			kvMenu.GetSectionName(buffer, sizeof(buffer));
 			
 			kvMenu.GetString("admin", admin, sizeof(admin),"");
@@ -181,16 +181,16 @@ void BuildDynamicMenu()
 				kvMenu.GetString("type", inputBuffer, sizeof(inputBuffer));
 					
 				if (strncmp(inputBuffer,"group",5)==0)
-				{	
+				{
 					if (StrContains(inputBuffer, "player") != -1)
-					{			
+					{
 						submenuInput.type = SubMenu_GroupPlayer;
 					}
 					else
 					{
 						submenuInput.type = SubMenu_Group;
 					}
-				}			
+				}
 				else if (StrEqual(inputBuffer,"mapcycle"))
 				{
 					submenuInput.type = SubMenu_MapCycle;
@@ -202,13 +202,13 @@ void BuildDynamicMenu()
 					submenuInput.listdata.Reset();
 				}
 				else if (StrContains(inputBuffer, "player") != -1)
-				{			
+				{
 					submenuInput.type = SubMenu_Player;
 				}
 				else if (StrEqual(inputBuffer,"onoff"))
 				{
 					submenuInput.type = SubMenu_OnOff;
-				}		
+				}
 				else //assume 'list' type
 				{
 					submenuInput.type = SubMenu_List;
@@ -282,7 +282,7 @@ void BuildDynamicMenu()
 					else
 					{
 						submenuInput.method = Name;
-					}				
+					}
 				}
 				
 				kvMenu.GetString("title", inputBuffer, sizeof(inputBuffer));
@@ -410,7 +410,7 @@ public void DynamicMenuItemHandler(TopMenu topmenu,
 		topmenu.GetObjName(object_id, buffer, maxlength);
 	}
 	else if (action == TopMenuAction_SelectOption)
-	{	
+	{
 		char locString[10];
 		topmenu.GetInfoString(object_id, locString, sizeof(locString));
 		
@@ -454,12 +454,12 @@ public void ParamCheck(int client)
 		itemMenu.ExitBackButton = true;
 			
 		if ((outputSubmenu.type == SubMenu_Group) || (outputSubmenu.type == SubMenu_GroupPlayer))
-		{	
+		{
 			char nameBuffer[ARRAY_STRING_LENGTH];
 			char commandBuffer[ARRAY_STRING_LENGTH];
 		
 			for (int i = 0; i<g_groupCount; i++)
-			{			
+			{
 				g_groupList.groupListName.GetString(i, nameBuffer, sizeof(nameBuffer));
 				g_groupList.groupListCommand.GetString(i, commandBuffer, sizeof(commandBuffer));
 				itemMenu.AddItem(commandBuffer, nameBuffer);
@@ -467,7 +467,7 @@ public void ParamCheck(int client)
 		}
 		
 		if (outputSubmenu.type == SubMenu_MapCycle)
-		{	
+		{
 			char path[200];
 			outputSubmenu.listdata.ReadString(path, sizeof(path));
 			outputSubmenu.listdata.Reset();
@@ -500,7 +500,7 @@ public void ParamCheck(int client)
 			for (int i=1; i<=MaxClients; i++)
 			{
 				if (IsClientInGame(i))
-				{			
+				{
 					GetClientName(i, nameBuffer, sizeof(nameBuffer));
 					
 					switch (playermethod)
@@ -521,7 +521,7 @@ public void ParamCheck(int client)
 						{
 							if (GetClientAuthId(i, AuthId_Steam2, infoBuffer, sizeof(infoBuffer)))
 								itemMenu.AddItem(infoBuffer, nameBuffer);
-						}	
+						}
 						case IpAddress:
 						{
 							GetClientIP(i, infoBuffer, sizeof(infoBuffer));
@@ -530,12 +530,12 @@ public void ParamCheck(int client)
 						case Name:
 						{
 							itemMenu.AddItem(nameBuffer, nameBuffer);
-						}	
+						}
 						default: //assume client id
 						{
 							Format(temp,3,"%i",i);
 							itemMenu.AddItem(temp, nameBuffer);						
-						}								
+						}
 					}
 				}
 			}
@@ -544,7 +544,7 @@ public void ParamCheck(int client)
 		{
 			itemMenu.AddItem("1", "On");
 			itemMenu.AddItem("0", "Off");
-		}		
+		}
 		else
 		{
 			char value[64];
@@ -572,7 +572,7 @@ public void ParamCheck(int client)
 		itemMenu.Display(client, MENU_TIME_FOREVER);
 	}
 	else
-	{	
+	{
 		//nothing else need to be done. Run teh command.
 		
 		hAdminMenu.Display(client, TopMenuPosition_LastCategory);
@@ -673,7 +673,7 @@ stock bool QuoteString(char[] input, char[] output, int maxlen, char[] quotechar
 				/* Null terminate for safety */
 				output[maxlen-1] = 0;
 				return false;	
-			}		
+			}
 		}
 	}
 	

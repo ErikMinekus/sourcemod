@@ -666,7 +666,7 @@ public Action Command_AddGroup(int client, int args)
 	
 	delete db;
 	return Plugin_Handled;
-}	
+}
 
 public Action Command_DelAdmin(int client, int args)
 {

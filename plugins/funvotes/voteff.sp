@@ -37,7 +37,7 @@ void DisplayVoteFFMenu(int client)
 	{
 		ReplyToCommand(client, "[SM] %t", "Vote in Progress");
 		return;
-	}	
+	}
 	
 	if (!TestVoteDelay(client))
 	{
@@ -83,7 +83,7 @@ public void AdminMenu_VoteFF(TopMenu topmenu,
 		DisplayVoteFFMenu(param);
 	}
 	else if (action == TopMenuAction_DrawOption)
-	{	
+	{
 		/* disable this option if a vote is already running */
 		buffer[0] = !IsNewVoteAllowed() ? ITEMDRAW_IGNORE : ITEMDRAW_DEFAULT;
 	}

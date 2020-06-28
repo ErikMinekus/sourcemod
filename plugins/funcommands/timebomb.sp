@@ -89,7 +89,7 @@ public Action Timer_TimeBomb(Handle timer, any value)
 	{
 		KillTimeBomb(client);
 		return Plugin_Stop;
-	}	
+	}
 	g_TimeBombTime[client]--;
 	
 	float vec[3];
@@ -207,7 +207,7 @@ public Action Timer_TimeBomb(Handle timer, any value)
 					SlapPlayer(i, damage, false);
 				}
 				*/
-			}		
+			}
 		}
 		return Plugin_Stop;
 	}

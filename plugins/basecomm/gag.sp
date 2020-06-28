@@ -326,7 +326,7 @@ void PerformUnSilence(int client, int target)
 }
 
 public Action Command_Mute(int client, int args)
-{	
+{
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_mute <player>");
@@ -374,7 +374,7 @@ public Action Command_Mute(int client, int args)
 }
 
 public Action Command_Gag(int client, int args)
-{	
+{
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_gag <player>");
@@ -422,7 +422,7 @@ public Action Command_Gag(int client, int args)
 }
 
 public Action Command_Silence(int client, int args)
-{	
+{
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_silence <player>");
@@ -470,7 +470,7 @@ public Action Command_Silence(int client, int args)
 }
 
 public Action Command_Unmute(int client, int args)
-{	
+{
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_unmute <player>");
@@ -523,7 +523,7 @@ public Action Command_Unmute(int client, int args)
 }
 
 public Action Command_Ungag(int client, int args)
-{	
+{
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_ungag <player>");
@@ -571,7 +571,7 @@ public Action Command_Ungag(int client, int args)
 }
 
 public Action Command_Unsilence(int client, int args)
-{	
+{
 	if (args < 1)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_unsilence <player>");

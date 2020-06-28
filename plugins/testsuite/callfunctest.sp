@@ -144,7 +144,7 @@ public Action:Command_CallFunc(args)
 }
 
 public Action:Command_ReentrantCallFunc(args)
-{	
+{
 	new err, ret;
 	new Function:func = GetFunctionByName(null, "OnReentrantCallReceived");
 	

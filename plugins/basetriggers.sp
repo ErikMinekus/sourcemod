@@ -424,7 +424,7 @@ void ShowTimeLeft(int client, int who)
 						{
 							FormatEx(finalOutput[len], sizeof(finalOutput)-len, "%T", "FragLimitAppend", client);
 						}
-					}	
+					}
 				}
 				else
 				{
@@ -438,7 +438,7 @@ void ShowTimeLeft(int client, int who)
 					}
 					
 					written = true;
-				}			
+				}
 			}
 		}
 		
@@ -477,8 +477,8 @@ void ShowTimeLeft(int client, int who)
 					}
 					
 					written = true;
-				}			
-			}		
+				}
+			}
 		}
 	}
 	

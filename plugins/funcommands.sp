@@ -181,7 +181,7 @@ void HookEvents()
 	else
 	{
 		HookEvent("round_end", Event_RoundEnd, EventHookMode_PostNoCopy);
-	}	
+	}
 }
 
 public void OnMapStart()

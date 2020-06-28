@@ -276,7 +276,7 @@ public Action Command_AddBan(int client, int args)
 	{
 		ReplyToCommand(client, "[SM] Usage: sm_addban <time> <steamid> [reason]");
 		return Plugin_Handled;
-	}	
+	}
 	total_len += len;
 
 	/* Get steamid */

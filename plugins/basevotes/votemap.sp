@@ -64,7 +64,7 @@ void DisplayVoteMapMenu(int client, int mapCount, char[][] maps)
 			char displayName[PLATFORM_MAX_PATH];
 			GetMapDisplayName(maps[i], displayName, sizeof(displayName));
 			g_hVoteMenu.AddItem(maps[i], displayName);
-		}	
+		}
 	}
 	
 	g_hVoteMenu.ExitButton = false;
@@ -128,7 +128,7 @@ public int MenuHandler_Confirm(Menu menu, MenuAction action, int param1, int par
 public int MenuHandler_Map(Menu menu, MenuAction action, int param1, int param2)
 {
 	if (action == MenuAction_Cancel)
-	{		
+	{
 		if (param2 == MenuCancel_ExitBack && hTopMenu)
 		{
 			ConfirmVote(param1);
@@ -209,7 +209,7 @@ public void AdminMenu_VoteMap(TopMenu topmenu,
 		}
 	}
 	else if (action == TopMenuAction_DrawOption)
-	{	
+	{
 		/* disable this option if a vote is already running, theres no maps listed or someone else has already acessed this menu */
 		buffer[0] = (!IsNewVoteAllowed() || g_mapCount < 1 || g_VoteMapInUse) ? ITEMDRAW_IGNORE : ITEMDRAW_DEFAULT;
 	}
@@ -242,21 +242,21 @@ public Action Command_Votemap(int client, int args)
 	int len, pos;
 	
 	while (pos != -1 && mapCount < 5)
-	{	
+	{
 		pos = BreakString(text[len], maps[mapCount], sizeof(maps[]));
 		
 		if (!IsMapValid(maps[mapCount]))
 		{
 			ReplyToCommand(client, "[SM] %t", "Map was not found", maps[mapCount]);
 			return Plugin_Handled;
-		}		
+		}
 
 		mapCount++;
 		
 		if (pos != -1)
 		{
 			len += pos;
-		}	
+		}
 	}
 
 	DisplayVoteMapMenu(client, mapCount, maps);

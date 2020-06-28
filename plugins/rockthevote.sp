@@ -86,7 +86,7 @@ public void OnPluginStart()
 		if (IsClientConnected(i))
 		{
 			OnClientConnected(i);	
-		}	
+		}
 	}
 }
 
@@ -114,7 +114,7 @@ public void OnClientConnected(int client)
 }
 
 public void OnClientDisconnect(int client)
-{	
+{
 	if (g_Voted[client])
 	{
 		g_Votes--;
@@ -138,7 +138,7 @@ public void OnClientDisconnect(int client)
 		}
 		
 		StartRTV();
-	}	
+	}
 }
 
 public void OnClientSayCommand_Post(int client, const char[] command, const char[] sArgs)
@@ -194,7 +194,7 @@ void AttemptRTV(int client)
 	{
 		ReplyToCommand(client, "[SM] %t", "Already Voted", g_Votes, g_VotesNeeded);
 		return;
-	}	
+	}
 	
 	char name[MAX_NAME_LENGTH];
 	GetClientName(client, name, sizeof(name));
@@ -207,7 +207,7 @@ void AttemptRTV(int client)
 	if (g_Votes >= g_VotesNeeded)
 	{
 		StartRTV();
-	}	
+	}
 }
 
 public Action Timer_DelayRTV(Handle timer)
@@ -271,7 +271,7 @@ public Action Timer_ChangeMap(Handle hTimer)
 	
 	char map[PLATFORM_MAX_PATH];
 	if (GetNextMap(map, sizeof(map)))
-	{	
+	{
 		ForceChangeLevel(map, "RTV after mapvote");
 	}
 	

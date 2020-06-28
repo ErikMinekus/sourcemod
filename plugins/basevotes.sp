@@ -188,14 +188,14 @@ public Action Command_Vote(int client, int args)
 	int pos = len;
 	
 	while (args > 1 && pos != -1 && answerCount < 5)
-	{	
+	{
 		pos = BreakString(text[len], answers[answerCount], sizeof(answers[]));
 		answerCount++;
 		
 		if (pos != -1)
 		{
 			len += pos;
-		}	
+		}
 	}
 
 	LogAction(client, -1, "\"%L\" initiated a generic vote.", client);
@@ -216,7 +216,7 @@ public Action Command_Vote(int client, int args)
 		for (int i = 0; i < answerCount; i++)
 		{
 			g_hVoteMenu.AddItem(answers[i], answers[i]);
-		}	
+		}
 	}
 	
 	g_hVoteMenu.ExitButton = false;
@@ -265,7 +265,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 	else if (action == MenuAction_VoteCancel && param1 == VoteCancel_NoVotes)
 	{
 		PrintToChatAll("[SM] %t", "No Votes Cast");
-	}	
+	}
 	else if (action == MenuAction_VoteEnd)
 	{
 		char item[PLATFORM_MAX_PATH], display[64];

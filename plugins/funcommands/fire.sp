@@ -96,7 +96,7 @@ public Action Timer_FireBomb(Handle timer, any value)
 	{
 		KillFireBomb(client);
 		return Plugin_Stop;
-	}	
+	}
 	g_FireBombTime[client]--;
 	
 	float vec[3];
@@ -205,7 +205,7 @@ public Action Timer_FireBomb(Handle timer, any value)
 				duration *= (g_Cvar_FireBombRadius.FloatValue - distance) / g_Cvar_FireBombRadius.FloatValue;
 
 				IgniteEntity(i, duration);
-			}		
+			}
 		}
 		return Plugin_Stop;
 	}
@@ -464,6 +464,6 @@ public Action Command_FireBomb(int client, int args)
 	else
 	{
 		ShowActivity2(client, "[SM] ", "%t", "Toggled FireBomb on target", "_s", target_name);
-	}	
+	}
 	return Plugin_Handled;
 }

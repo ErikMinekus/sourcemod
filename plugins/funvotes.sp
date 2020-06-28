@@ -285,7 +285,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 					PrintToChatAll("[SM] %t", "Cvar changed", "mp_friendlyfire", (g_Cvar_FF.BoolValue ? "0" : "1"));
 					LogAction(-1, -1, "Changing friendly fire to %s due to vote.", (g_Cvar_FF.BoolValue ? "0" : "1"));
 					g_Cvar_FF.BoolValue = !g_Cvar_FF.BoolValue;
-				}				
+				}
 			}
 		}
 	}

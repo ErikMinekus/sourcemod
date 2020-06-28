@@ -68,7 +68,7 @@ void KillDrug(int client)
 		pb.SetColor("clr", color);
 	}
 	else
-	{	
+	{
 		BfWrite bf = UserMessageToBfWrite(message);
 		bf.WriteShort(duration);
 		bf.WriteShort(holdtime);
@@ -121,7 +121,7 @@ void PerformDrug(int client, int target, int toggle)
 			{
 				KillDrug(target);
 				LogAction(client, target, "\"%L\" undrugged \"%L\"", client, target);
-			}			
+			}
 		}
 
 		case (1):
@@ -130,7 +130,7 @@ void PerformDrug(int client, int target, int toggle)
 			{
 				CreateDrug(target);
 				LogAction(client, target, "\"%L\" drugged \"%L\"", client, target);
-			}			
+			}
 		}
 		
 		case (0):
@@ -139,7 +139,7 @@ void PerformDrug(int client, int target, int toggle)
 			{
 				KillDrug(target);
 				LogAction(client, target, "\"%L\" undrugged \"%L\"", client, target);
-			}			
+			}
 		}
 	}
 }

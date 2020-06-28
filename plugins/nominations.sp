@@ -196,7 +196,7 @@ public Action Command_Nominate(int client, int args)
 	ReplySource source = GetCmdReplySource();
 	
 	if (args == 0)
-	{	
+	{
 		if (source == SM_REPLY_TO_CHAT)
 		{
 			OpenNominationMenu(client);
@@ -380,7 +380,7 @@ void BuildMapMenu()
 	char currentMap[PLATFORM_MAX_PATH];
 	
 	if (g_Cvar_ExcludeOld.BoolValue)
-	{	
+	{
 		excludeMaps = new ArrayList(ByteCountToCells(PLATFORM_MAX_PATH));
 		GetExcludeMapList(excludeMaps);
 	}
