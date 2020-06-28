@@ -114,7 +114,7 @@ public void OnConfigsExecuted()
 	}
 }
 
-public Action Command_List(int client, int args) 
+public Action Command_List(int client, int args)
 {
 	PrintToConsole(client, "Map Cycle:");
 	

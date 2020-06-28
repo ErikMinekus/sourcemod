@@ -203,7 +203,7 @@ public void AdminMenu_VoteMap(TopMenu topmenu,
 			g_VoteMapInUse = true;
 			g_MapList.Display(param, MENU_TIME_FOREVER);
 		}
-		else 
+		else
 		{
 			PrintToChat(param, "[SM] %T", "Map Vote In Use", param);
 		}

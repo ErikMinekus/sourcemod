@@ -105,11 +105,11 @@ public SMCResult ReadUsers_KeyValue(SMCParser smc,
 	{
 		strcopy(g_CurIdent, sizeof(g_CurIdent), value);
 	}
-	else if (StrEqual(key, "password")) 
+	else if (StrEqual(key, "password"))
 	{
 		strcopy(g_CurPass, sizeof(g_CurPass), value);
 	}
-	else if (StrEqual(key, "group")) 
+	else if (StrEqual(key, "group"))
 	{
 		GroupId id = FindAdmGroup(value);
 		if (id == INVALID_GROUP_ID)
@@ -119,7 +119,7 @@ public SMCResult ReadUsers_KeyValue(SMCParser smc,
 
 		g_GroupArray.Push(id);
 	}
-	else if (StrEqual(key, "flags")) 
+	else if (StrEqual(key, "flags"))
 	{
 		int len = strlen(value);
 		AdminFlag flag;
@@ -136,7 +136,7 @@ public SMCResult ReadUsers_KeyValue(SMCParser smc,
 			}
 		}
 	}
-	else if (StrEqual(key, "immunity")) 
+	else if (StrEqual(key, "immunity"))
 	{
 		g_CurImmunity = StringToInt(value);
 	}

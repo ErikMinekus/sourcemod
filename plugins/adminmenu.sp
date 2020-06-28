@@ -223,7 +223,7 @@ stock int UTIL_AddTargetsToMenu2(Menu menu, int source_client, int flags)
 			continue;
 		}
 		
-		if (((flags & COMMAND_FILTER_ALIVE) == COMMAND_FILTER_ALIVE) 
+		if (((flags & COMMAND_FILTER_ALIVE) == COMMAND_FILTER_ALIVE)
 			&& !IsPlayerAlive(i))
 		{
 			continue;

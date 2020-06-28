@@ -51,7 +51,7 @@ enum SubMenu_Type
 	SubMenu_Player,
 	SubMenu_MapCycle,
 	SubMenu_List,
-	SubMenu_OnOff	
+	SubMenu_OnOff
 }
 
 enum struct Item

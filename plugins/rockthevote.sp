@@ -130,7 +130,7 @@ public void OnClientDisconnect(int client)
 	if (g_Votes && 
 		g_Voters && 
 		g_Votes >= g_VotesNeeded && 
-		g_RTVAllowed ) 
+		g_RTVAllowed )
 	{
 		if (g_Cvar_RTVPostVoteAction.IntValue == 1 && HasEndOfMapVoteFinished())
 		{
