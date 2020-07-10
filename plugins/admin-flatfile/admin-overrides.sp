@@ -191,7 +191,7 @@ void InternalReadOverrides(SMCParser parser, const char[] file)
 	/* Set states */
 	InitGlobalStates();
 	g_OverrideState = OverrideState_None;
-		
+	
 	SMCError err = parser.ParseFile(g_Filename);
 	if (err != SMCError_Okay)
 	{

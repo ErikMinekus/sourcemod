@@ -35,7 +35,7 @@ public Action:Command_Class(client, args)
 	TF2_RemoveAllWeapons(client);
 	
 	PrintToChat(client, "Test: sniper's classnum is %i (should be %i)", TF2_GetClass("sniper"), TFClass_Sniper);
-		
+	
 	return Plugin_Handled;
 }
 
@@ -68,7 +68,7 @@ public Action:Command_ChangeClass(client, args)
 	TF2_SetPlayerClass(client, TFClassType:one);
 	
 	PrintToChat(client, "New class is :%i", TF2_GetPlayerClass(client));
-		
+	
 	return Plugin_Handled;
 }
 

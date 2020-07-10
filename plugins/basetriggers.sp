@@ -154,7 +154,7 @@ public void OnLibraryRemoved(const char[] name)
 		mapchooser = false;
 	}
 }
- 
+
 public void OnLibraryAdded(const char[] name)
 {
 	if (StrEqual(name, "mapchooser"))

@@ -49,7 +49,7 @@ void DisplayVoteMapMenu(int client, int mapCount, char[][] maps)
 	if (mapCount == 1)
 	{
 		GetMapDisplayName(maps[0], g_voteInfo[VOTE_NAME], sizeof(g_voteInfo[]));
-			
+		
 		g_hVoteMenu.SetTitle("Change Map To");
 		g_hVoteMenu.AddItem(maps[0], "Yes");
 		g_hVoteMenu.AddItem(VOTE_NO, "No");
@@ -228,7 +228,7 @@ public Action Command_Votemap(int client, int args)
 		ReplyToCommand(client, "[SM] %t", "Vote in Progress");
 		return Plugin_Handled;
 	}
-		
+	
 	if (!TestVoteDelay(client))
 	{
 		return Plugin_Handled;

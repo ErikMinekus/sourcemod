@@ -30,7 +30,7 @@
  *
  * Version: $Id$
  */
- 
+
 void PerformWho(int client, int target, ReplySource reply, bool is_admin)
 {
 	char name[MAX_NAME_LENGTH];

@@ -30,7 +30,7 @@
  *
  * Version: $Id$
  */
- 
+
 void PerformCancelVote(int client)
 {
 	if (!IsVoteInProgress())
@@ -43,7 +43,7 @@ void PerformCancelVote(int client)
 	
 	CancelVote();
 }
-	
+
 public void AdminMenu_CancelVote(TopMenu topmenu, 
 							  TopMenuAction action,
 							  TopMenuObject object_id,

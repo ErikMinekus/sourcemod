@@ -30,7 +30,7 @@
  *
  * Version: $Id$
  */
- 
+
 void FireOnClientMute(int client, bool muteState)
 {
  	static GlobalForward hForward;
@@ -45,7 +45,7 @@ void FireOnClientMute(int client, bool muteState)
 	Call_PushCell(muteState);
 	Call_Finish();
 }
- 
+
 void FireOnClientGag(int client, bool gagState)
 {
  	static GlobalForward hForward;

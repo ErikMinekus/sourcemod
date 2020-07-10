@@ -221,7 +221,7 @@ static void InternalReadGroups(const char[] path, GroupPass pass)
 	g_CurGrp = INVALID_GROUP_ID;
 	g_GroupPass = pass;
 	g_NeedReparse = false;
-		
+	
 	SMCError err = g_hGroupParser.ParseFile(path);
 	if (err != SMCError_Okay)
 	{

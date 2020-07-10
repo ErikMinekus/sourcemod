@@ -425,7 +425,7 @@ public Action Command_SetAdminGroups(int client, int args)
 		"SELECT id FROM sm_admins WHERE authtype = '%s' AND identity = '%s'",
 		authtype,
 		safe_identity);
-		
+	
 	DBResultSet rs;
 	if ((rs = SQL_Query(db, query)) == null)
 	{
@@ -706,7 +706,7 @@ public Action Command_DelAdmin(int client, int args)
 		"SELECT id FROM sm_admins WHERE authtype = '%s' AND identity = '%s'",
 		authtype,
 		safe_identity);
-		
+	
 	DBResultSet rs;
 	if ((rs = SQL_Query(db, query)) == null)
 	{

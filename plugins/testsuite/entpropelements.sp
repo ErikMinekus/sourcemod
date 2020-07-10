@@ -53,7 +53,7 @@ public Action:sm_listammo(client, argc)
 		if ((ammo = GetEntProp(target, proptype, "m_iAmmo", _, i)) > 0)
 			ReplyToCommand(client, "Slot %d, Ammo %d", i, ammo);
 	}
-		
+	
 	return Plugin_Handled;
 }
 
@@ -94,7 +94,7 @@ public Action:sm_listweapons(client, argc)
 		GetEdictClassname(weapon, classname, sizeof(classname));
 		ReplyToCommand(client, "Slot %d - \"%s\"", i, classname);
 	}
-		
+	
 	return Plugin_Handled;
 }
 

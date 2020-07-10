@@ -197,7 +197,7 @@ public Action Command_SmHsay(int client, int args)
 	
 	char text[192];
 	GetCmdArgString(text, sizeof(text));
- 
+
 	char nameBuf[MAX_NAME_LENGTH];
 	
 	for (int i = 1; i <= MaxClients; i++)
@@ -227,7 +227,7 @@ public Action Command_SmTsay(int client, int args)
 	GetCmdArgString(text, sizeof(text));
 	
 	int len = BreakString(text, colorStr, 16);
-		
+	
 	int color = FindColor(colorStr);
 	char nameBuf[MAX_NAME_LENGTH];
 	
@@ -283,7 +283,7 @@ public Action Command_SmPsay(int client, int args)
 	int len = BreakString(text, arg, sizeof(arg));
 	
 	int target = FindTarget(client, arg, true, false);
-		
+	
 	if (target == -1)
 		return Plugin_Handled;	
 	
@@ -398,7 +398,7 @@ void SendPrivateChat(int client, int target, const char[] message)
 		else
 			PrintToChat(client, "\x04%t: \x01%s", "Private say to", target, client, message);
 	}
-  
+
 	if (g_GameEngine == Engine_CSGO)
 		PrintToChat(target, " \x01\x0B\x04%t: \x01%s", "Private say to", target, client, message);
 	else

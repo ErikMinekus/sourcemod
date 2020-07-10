@@ -100,7 +100,7 @@ void BuildDynamicMenu()
 	
 	char name[NAME_LENGTH];
 	char buffer[NAME_LENGTH];
-		
+	
 	if (!kvMenu.GotoFirstSubKey())
 		return;
 	
@@ -113,7 +113,7 @@ void BuildDynamicMenu()
 		kvMenu.GetSectionName(buffer, sizeof(buffer));
 
 		kvMenu.GetString("admin", admin, sizeof(admin),"sm_admin");
-				
+		
 		if ((categoryId = hAdminMenu.FindCategory(buffer)) == INVALID_TOPMENUOBJECT)
 		{
 			categoryId = hAdminMenu.AddCategory(buffer,
@@ -161,7 +161,7 @@ void BuildDynamicMenu()
 			{
 				itemInput.execute = Execute_Player;
 			}
-								
+			
 			/* iterate all submenus and load data into itemInput.submenus (ArrayList) */
 			
 			int count = 1;
@@ -172,14 +172,14 @@ void BuildDynamicMenu()
 			while (kvMenu.JumpToKey(countBuffer))
 			{
 				Submenu submenuInput;
-					
+				
 				if (count == 1)
 				{
 					itemInput.submenus = new ArrayList(sizeof(submenuInput));	
 				}
-					
+				
 				kvMenu.GetString("type", inputBuffer, sizeof(inputBuffer));
-					
+				
 				if (strncmp(inputBuffer,"group",5)==0)
 				{	
 					if (StrContains(inputBuffer, "player") != -1)
@@ -223,7 +223,7 @@ void BuildDynamicMenu()
 					bool more = true;
 					
 					int listcount = 0;
-								
+					
 					do
 					{
 						Format(temp,3,"%i",i);
@@ -248,7 +248,7 @@ void BuildDynamicMenu()
 						}
 						
 						i++;
-										
+						
 					} while (more);
 					
 					submenuInput.listdata.Reset();
@@ -287,17 +287,17 @@ void BuildDynamicMenu()
 				
 				kvMenu.GetString("title", inputBuffer, sizeof(inputBuffer));
 				strcopy(submenuInput.title, sizeof(submenuInput.title), inputBuffer);
-					
+				
 				count++;
 				Format(countBuffer, sizeof(countBuffer), "%i", count);
-					
+				
 				itemInput.submenus.PushArray(submenuInput);
 				
 				kvMenu.GoBack();	
 			}
-				
+			
 			/* Save this entire item into the global items array and add it to the menu */
-				
+			
 			int location = g_DataArray.PushArray(itemInput);
 			
 			char locString[10];
@@ -352,7 +352,7 @@ void ParseConfigs()
 	if (!FileExists(configPath))
 	{
 		LogError("Unable to locate admin menu groups file: %s", configPath);
-			
+        
 		return;		
 	}
 	
@@ -420,7 +420,7 @@ public void DynamicMenuItemHandler(TopMenu topmenu,
 		g_DataArray.GetArray(location, output);
 		
 		strcopy(g_command[param], sizeof(g_command[]), output.cmd);
-					
+		
 		g_currentPlace[param].item = location;
 		g_currentPlace[param].replaceNum = 1;
 		
@@ -437,7 +437,7 @@ public void ParamCheck(int client)
 	Submenu outputSubmenu;
 	
 	g_DataArray.GetArray(g_currentPlace[client].item, outputItem);
-		
+	
 	if (g_currentPlace[client].replaceNum < 1)
 	{
 		g_currentPlace[client].replaceNum = 1;
@@ -452,7 +452,7 @@ public void ParamCheck(int client)
 		
 		Menu itemMenu = new Menu(Menu_Selection);
 		itemMenu.ExitBackButton = true;
-			
+		
 		if ((outputSubmenu.type == SubMenu_Group) || (outputSubmenu.type == SubMenu_GroupPlayer))
 		{	
 			char nameBuffer[ARRAY_STRING_LENGTH];
@@ -549,7 +549,7 @@ public void ParamCheck(int client)
 		{
 			char value[64];
 			char text[64];
-					
+			
 			char admin[NAME_LENGTH];
 			
 			for (int i=0; i<outputSubmenu.listcount; i++)
@@ -605,7 +605,7 @@ public int Menu_Selection(Menu menu, MenuAction action, int param1, int param2)
 	if (action == MenuAction_Select)
 	{
 		char unquotedinfo[NAME_LENGTH];
- 
+
 		/* Get item info */
 		bool found = menu.GetItem(param2, unquotedinfo, sizeof(unquotedinfo));
 		

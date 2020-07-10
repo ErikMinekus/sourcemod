@@ -452,7 +452,7 @@ public void OnReceiveUser(Database db, DBResultSet rs, const char[] error, any d
 	 */
 	char query[255];
 	Format(query, sizeof(query), "SELECT g.name FROM sm_admins_groups ag JOIN sm_groups g ON ag.group_id = g.id WHERE ag.admin_id = %d", id);
-	 
+	
 	pk.Reset();
 	pk.WriteCell(client);
 	pk.WriteCell(sequence);
@@ -652,17 +652,17 @@ public void OnReceiveGroupOverrides(Database db, DBResultSet rs, const char[] er
 		{
 			o_type = Override_CommandGroup;
 		}
-				
+		
 		OverrideRule o_rule = Command_Deny;
 		if (StrEqual(access, "allow"))
 		{
 			o_rule = Command_Allow;
 		}
-				
+		
 #if defined _DEBUG
 		PrintToServer("AddAdmGroupCmdOverride(%d, %s, %d, %d)", grp, command, o_type, o_rule);
 #endif
-				
+		
 		grp.AddCommandOverride(command, o_type, o_rule);
 	}
 	

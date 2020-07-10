@@ -77,7 +77,7 @@ void DisplayGagTypesMenu(int client)
 	{
 		AddTranslatedMenuItem(menu, "5", "UnSilence Player", client);
 	}
-		
+	
 	menu.Display(client, MENU_TIME_FOREVER);
 }
 

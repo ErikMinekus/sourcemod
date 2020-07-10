@@ -237,7 +237,7 @@ public Action Command_BanIp(int client, int args)
 			  minutes, 
 			  arg, 
 			  Arguments[len]);
-				
+	
 	ReplyToCommand(client, "[SM] %t", "Ban added");
 	
 	BanIdentity(arg, 
@@ -246,7 +246,7 @@ public Action Command_BanIp(int client, int args)
 				Arguments[len], 
 				"sm_banip", 
 				client);
-				
+	
 	if (hit_client != -1)
 	{
 		KickClient(hit_client, "Banned: %s", Arguments[len]);

@@ -136,7 +136,7 @@ public Action:Command_TestSortStrings(args)
 			"pRED*'s awesome",
 			"WHAT?!"
 		}
-		
+	
 	PrintToServer("Testing ascending sort:")
 	SortStrings(strarray, 10, Sort_Ascending)
 	PrintStrings(strarray, 10)

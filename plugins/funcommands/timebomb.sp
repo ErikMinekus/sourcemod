@@ -179,7 +179,7 @@ public Action Timer_TimeBomb(Handle timer, any value)
 				
 				int damage = 220;
 				damage = RoundToFloor(damage * ((g_Cvar_TimeBombRadius.FloatValue - distance) / g_Cvar_TimeBombRadius.FloatValue));
-					
+				
 				SlapPlayer(i, damage, false);
 				
 				if (g_ExplosionSprite > -1)

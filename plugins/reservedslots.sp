@@ -143,7 +143,7 @@ public void OnClientPostAdminCheck(int client)
 				if (flags & ADMFLAG_ROOT || flags & ADMFLAG_RESERVATION)
 				{
 					int target = SelectKickClient();
-						
+					
 					if (target)
 					{
 						/* Kick public player to free the reserved slot again */
@@ -172,7 +172,7 @@ public void OnClientPostAdminCheck(int client)
 				if (g_isAdmin[client])
 				{
 					int target = SelectKickClient();
-						
+					
 					if (target)
 					{
 						/* Kick public player to free the reserved slot again */
@@ -283,7 +283,7 @@ int SelectKickClient()
 		}
 		
 		value = 0.0;
-			
+		
 		if (IsClientInGame(i))
 		{
 			if (type == Kick_HighestPing)

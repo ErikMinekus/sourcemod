@@ -31,7 +31,7 @@
  *
  * Version: $Id$
  */
- 
+
 
 #pragma semicolon 1
 #include <sourcemod>
@@ -133,7 +133,7 @@ public Action Command_Cookie(int client, int args)
 				TrimString(description);
 				if (description[0] != EOS)
 					ReplyToCommand(client, "- %s", description);
-					
+				
 				break;
 			}
 		}

@@ -43,7 +43,7 @@ void DisplayVoteGravityMenu(int client, int count, char[][] items)
 	if (count == 1)
 	{
 		strcopy(g_voteInfo[VOTE_NAME], sizeof(g_voteInfo[]), items[0]);
-			
+		
 		g_hVoteMenu.SetTitle("Change Gravity To");
 		g_hVoteMenu.AddItem(items[0], "Yes");
 		g_hVoteMenu.AddItem(VOTE_NO, "No");

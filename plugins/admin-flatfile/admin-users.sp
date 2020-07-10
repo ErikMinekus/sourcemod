@@ -235,7 +235,7 @@ void ReadUsers()
 	/* Set states */
 	InitGlobalStates();
 	g_UserState = UserState_None;
-		
+	
 	SMCError err = g_hUserParser.ParseFile(g_Filename);
 	if (err != SMCError_Okay)
 	{

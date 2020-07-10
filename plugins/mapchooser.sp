@@ -31,7 +31,7 @@
  *
  * Version: $Id$
  */
- 
+
 #pragma semicolon 1
 #include <sourcemod>
 #include <mapchooser>
@@ -211,7 +211,7 @@ public void OnConfigsExecuted()
 					 "mapchooser",
 					 MAPLIST_FLAG_CLEARARRAY|MAPLIST_FLAG_MAPSFOLDER)
 		!= null)
-		
+	
 	{
 		if (g_mapFileSerial == -1)
 		{
@@ -273,7 +273,7 @@ public void OnMapEnd()
 	GetCurrentMap(map, sizeof(map));
 	RemoveStringFromArray(g_OldMapList, map);
 	g_OldMapList.PushString(map);
-				
+	
 	while (g_OldMapList.Length > g_Cvar_ExcludeMaps.IntValue)
 	{
 		g_OldMapList.Erase(0);
@@ -412,7 +412,7 @@ public void Event_TeamPlayWinPanel(Event event, const char[] name, bool dontBroa
 	
 	int bluescore = event.GetInt("blue_score");
 	int redscore = event.GetInt("red_score");
-		
+	
 	if (event.GetInt("round_complete") == 1 || StrEqual(name, "arena_win_panel"))
 	{
 		g_TotalRounds++;
@@ -586,7 +586,7 @@ void InitiateVote(MapChange when, ArrayList inputlist=null)
 	g_ChangeTime = when;
 	
 	g_WaitingForVote = false;
-		
+	
 	g_HasVoteStarted = true;
 	g_VoteMenu = new Menu(Handler_MapVoteMenu, MENU_ACTIONS_ALL);
 	g_VoteMenu.SetTitle("Vote Nextmap");
@@ -602,7 +602,7 @@ void InitiateVote(MapChange when, ArrayList inputlist=null)
 	 * Is this the right thing to do? External lists will probably come from places
 	 * like sm_mapvote from the adminmenu in the future.
 	 */
-	 
+	
 	char map[PLATFORM_MAX_PATH];
 	
 	/* No input given - User our internal nominations and maplist */
@@ -849,7 +849,7 @@ public void Handler_MapVoteFinished(Menu menu,
 			
 			PrintToChatAll("[SM] %t", "Starting Runoff", g_Cvar_RunOffPercent.FloatValue, info1, map1percent, info2, map2percent);
 			LogMessage("Voting for next map was indecisive, beginning runoff vote");
-					
+			
 			return;
 		}
 	}
@@ -1273,7 +1273,7 @@ void WritePreviousMapsToText()
 	{
 		return;
 	}
-    
+
 	char lastMap[PLATFORM_MAX_PATH];
 	for (int idx=0; idx<g_OldMapList.Length; idx++)
 	{

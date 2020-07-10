@@ -30,7 +30,7 @@
  *
  * Version: $Id$
  */
- 
+
 int g_SlapDamage[MAXPLAYERS+1];
 
 void PerformSlap(int client, int target, int damage)

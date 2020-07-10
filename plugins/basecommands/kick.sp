@@ -30,7 +30,7 @@
  *
  * Version: $Id$
  */
- 
+
 void PerformKick(int client, int target, const char[] reason)
 {
 	LogAction(client, target, "\"%L\" kicked \"%L\" (reason \"%s\")", client, target, reason);

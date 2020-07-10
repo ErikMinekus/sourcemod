@@ -98,7 +98,7 @@ public void OnMapStart()
 {
 	g_CurrentMapStartTime = GetTime();
 }
- 
+
 public void OnConfigsExecuted()
 {
 	char lastMap[PLATFORM_MAX_PATH], currentMap[PLATFORM_MAX_PATH];
@@ -125,10 +125,10 @@ public Action Command_List(int client, int args)
 		g_MapList.GetString(i, mapName, sizeof(mapName));
 		PrintToConsole(client, "%s", mapName);
 	}
- 
+
 	return Plugin_Handled;
 }
-  
+
 void FindAndSetNextMap()
 {
 	if (ReadMapList(g_MapList, 
@@ -174,7 +174,7 @@ void FindAndSetNextMap()
 	{
 		g_MapPos = 0;
 	}
- 
+
  	g_MapList.GetString(g_MapPos, mapName, sizeof(mapName));
 	SetNextMap(mapName);
 }

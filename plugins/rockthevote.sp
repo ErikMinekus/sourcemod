@@ -177,7 +177,7 @@ void AttemptRTV(int client)
 		ReplyToCommand(client, "[SM] %t", "RTV Not Allowed");
 		return;
 	}
-		
+	
 	if (!CanMapChooserStartVote())
 	{
 		ReplyToCommand(client, "[SM] %t", "RTV Started");
@@ -256,7 +256,7 @@ void StartRTV()
 void ResetRTV()
 {
 	g_Votes = 0;
-			
+	
 	for (int i=1; i<=MAXPLAYERS; i++)
 	{
 		g_Voted[i] = false;

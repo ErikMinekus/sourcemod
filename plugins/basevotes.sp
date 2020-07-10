@@ -173,7 +173,7 @@ public Action Command_Vote(int client, int args)
 		ReplyToCommand(client, "[SM] %t", "Vote in Progress");
 		return Plugin_Handled;
 	}
-		
+	
 	if (!TestVoteDelay(client))
 	{
 		return Plugin_Handled;
@@ -238,7 +238,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 			char title[64];
 			menu.GetTitle(title, sizeof(title));
 			
-	 		char buffer[255];
+			char buffer[255];
 			Format(buffer, sizeof(buffer), "%T", title, param1, g_voteInfo[VOTE_NAME]);
 
 			Panel panel = view_as<Panel>(param2);
@@ -322,7 +322,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 					CreateDataTimer(5.0, Timer_ChangeMap, dp);
 					dp.WriteString(item);		
 				}
-					
+				
 				case (kick):
 				{
 					int voteTarget;
@@ -343,7 +343,7 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 						ServerCommand("kickid %d \"%s\"", g_voteTarget, g_voteArg);					
 					}
 				}
-					
+				
 				case (ban):
 				{
 					if (g_voteArg[0] == '\0')
@@ -425,7 +425,7 @@ bool TestVoteDelay(int client)
  		
  		return false;
  	}
- 	
+	
 	return true;
 }
 

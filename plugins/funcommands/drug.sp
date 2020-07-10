@@ -199,7 +199,7 @@ public Action Timer_Drug(Handle timer, any client)
 	}
 	
 	EndMessage();
-		
+	
 	return Plugin_Handled;
 }
 

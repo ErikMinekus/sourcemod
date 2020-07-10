@@ -115,7 +115,7 @@ public Action Timer_Beacon(Handle timer, any value)
 		GetClientEyePosition(client, vec);
 		EmitAmbientSound(g_BlipSound, vec, client, SNDLEVEL_RAIDSIREN);	
 	}
-		
+	
 	return Plugin_Continue;
 }
 

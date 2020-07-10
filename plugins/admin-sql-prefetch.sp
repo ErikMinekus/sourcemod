@@ -313,7 +313,7 @@ void FetchGroups(Database db)
 		{
 			continue;
 		}
-				
+		
 		OverrideType o_type = Override_Command;
 		if (StrEqual(type, "group"))
 		{
@@ -325,7 +325,7 @@ void FetchGroups(Database db)
 		{
 			o_rule = Command_Allow;
 		}
-				
+		
 #if defined _DEBUG
 		PrintToServer("AddAdmGroupCmdOverride(%d, %s, %d, %d)", grp, cmd, o_type, o_rule);
 #endif

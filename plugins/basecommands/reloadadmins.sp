@@ -30,7 +30,7 @@
  *
  * Version: $Id$
  */
- 
+
 void PerformReloadAdmins(int client)
 {
 	/* Dump it all! */

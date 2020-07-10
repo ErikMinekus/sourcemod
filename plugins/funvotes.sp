@@ -333,6 +333,6 @@ bool TestVoteDelay(int client)
  		
  		return false;
  	}
- 	
+	
 	return true;
 }

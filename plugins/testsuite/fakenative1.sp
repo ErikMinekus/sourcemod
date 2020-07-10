@@ -72,7 +72,7 @@ public __TestNative5(Handle:plugin, numParams)
 		new len = GetNativeCell(3);
 		new fmt_len;
 		new String:buffer[len];
-			
+		
 		GetNativeStringLength(4, fmt_len);
 		
 		new String:format[fmt_len];
