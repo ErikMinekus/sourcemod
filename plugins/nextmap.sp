@@ -175,7 +175,7 @@ void FindAndSetNextMap()
 		g_MapPos = 0;
 	}
 
- 	g_MapList.GetString(g_MapPos, mapName, sizeof(mapName));
+	g_MapList.GetString(g_MapPos, mapName, sizeof(mapName));
 	SetNextMap(mapName);
 }
 

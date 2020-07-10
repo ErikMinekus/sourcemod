@@ -33,7 +33,7 @@
 
 void FireOnClientMute(int client, bool muteState)
 {
- 	static GlobalForward hForward;
+	static GlobalForward hForward;
 	
 	if(hForward == null)
 	{
@@ -48,7 +48,7 @@ void FireOnClientMute(int client, bool muteState)
 
 void FireOnClientGag(int client, bool gagState)
 {
- 	static GlobalForward hForward;
+	static GlobalForward hForward;
 	
 	if(hForward == null)
 	{

@@ -64,7 +64,7 @@ public Action Command_Play(int client, int args)
 	char Arguments[PLATFORM_MAX_PATH + 65];
 	GetCmdArgString(Arguments, sizeof(Arguments));
 
- 	char Arg[65];
+	char Arg[65];
 	int len = BreakString(Arguments, Arg, sizeof(Arg));
 
 	/* Make sure it does not go out of bound by doing "sm_play user  "*/

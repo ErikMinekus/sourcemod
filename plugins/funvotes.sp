@@ -171,10 +171,10 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 	}
 	else if (action == MenuAction_Display)
 	{
-	 	char title[64];
+		char title[64];
 		menu.GetTitle(title, sizeof(title));
 
-	 	char buffer[255];
+		char buffer[255];
 		Format(buffer, sizeof(buffer), "%T", title, param1, g_voteInfo[VOTE_NAME]);
 
 		Panel panel = view_as<Panel>(param2);
@@ -185,8 +185,8 @@ public int Handler_VoteCallback(Menu menu, MenuAction action, int param1, int pa
 		char display[64];
 		menu.GetItem(param2, "", 0, _, display, sizeof(display));
 	 
-	 	if (strcmp(display, VOTE_NO) == 0 || strcmp(display, VOTE_YES) == 0)
-	 	{
+		if (strcmp(display, VOTE_NO) == 0 || strcmp(display, VOTE_YES) == 0)
+		{
 			char buffer[255];
 			Format(buffer, sizeof(buffer), "%T", display, param1);
 
@@ -318,21 +318,21 @@ float GetVotePercent(int votes, int totalVotes)
 
 bool TestVoteDelay(int client)
 {
- 	int delay = CheckVoteDelay();
- 	
- 	if (delay > 0)
- 	{
- 		if (delay > 60)
- 		{
- 			ReplyToCommand(client, "[SM] %t", "Vote Delay Minutes", (delay / 60));
- 		}
- 		else
- 		{
- 			ReplyToCommand(client, "[SM] %t", "Vote Delay Seconds", delay);
- 		}
- 		
- 		return false;
- 	}
+	int delay = CheckVoteDelay();
+	
+	if (delay > 0)
+	{
+		if (delay > 60)
+		{
+			ReplyToCommand(client, "[SM] %t", "Vote Delay Minutes", (delay / 60));
+		}
+		else
+		{
+			ReplyToCommand(client, "[SM] %t", "Vote Delay Seconds", delay);
+		}
+		
+		return false;
+	}
 	
 	return true;
 }

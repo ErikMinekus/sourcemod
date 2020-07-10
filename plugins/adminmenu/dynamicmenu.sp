@@ -305,10 +305,10 @@ void BuildDynamicMenu()
 
 			if (hAdminMenu.AddItem(buffer,
 				DynamicMenuItemHandler,
-  				categoryId,
-  				admin,
-  				ADMFLAG_GENERIC,
-  				locString) == INVALID_TOPMENUOBJECT)
+				categoryId,
+				admin,
+				ADMFLAG_GENERIC,
+				locString) == INVALID_TOPMENUOBJECT)
 			{
 				LogError("Duplicate command name \"%s\" in adminmenu_custom.txt category \"%s\"", buffer, category_name);
 			}

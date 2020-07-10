@@ -1252,9 +1252,9 @@ void ReadPreviousMapsFromText()
 		return;
 	}
 	
- 	g_OldMapList.Clear();
+	g_OldMapList.Clear();
 	char map[PLATFORM_MAX_PATH];
- 	do 
+	do 
 	{
 		if (file.ReadLine(map, sizeof(map)))
 		{
@@ -1263,7 +1263,7 @@ void ReadPreviousMapsFromText()
 		}	
 	}
 	while (!file.EndOfFile());
- 	file.Close();
+	file.Close();
 }
 
 void WritePreviousMapsToText()
@@ -1281,7 +1281,7 @@ void WritePreviousMapsToText()
 		TrimString(lastMap);      
 		file.WriteLine(lastMap);
 	}
- 	file.Close();
+	file.Close();
 }
 
 char GetTextFilePath()

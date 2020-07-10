@@ -81,7 +81,7 @@ public void OnPluginStart()
 
 public void OnPluginEnd()
 {
-	/* 	If the plugin has been unloaded, reset visiblemaxplayers. In the case of the server shutting down this effect will not be visible */
+	/* If the plugin has been unloaded, reset visiblemaxplayers. In the case of the server shutting down this effect will not be visible */
 	ResetVisibleMax();
 }
 

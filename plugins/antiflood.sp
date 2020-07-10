@@ -72,7 +72,7 @@ public bool OnClientFloodCheck(int client)
 	max_chat = sm_flood_time.FloatValue;
 	
 	if (max_chat <= 0.0 
- 		|| CheckCommandAccess(client, "sm_flood_access", ADMFLAG_ROOT, true))
+		|| CheckCommandAccess(client, "sm_flood_access", ADMFLAG_ROOT, true))
 	{
 		return false;
 	}
@@ -92,7 +92,7 @@ public bool OnClientFloodCheck(int client)
 public void OnClientFloodResult(int client, bool blocked)
 {
 	if (max_chat <= 0.0 
- 		|| CheckCommandAccess(client, "sm_flood_access", ADMFLAG_ROOT, true))
+		|| CheckCommandAccess(client, "sm_flood_access", ADMFLAG_ROOT, true))
 	{
 		return;
 	}
